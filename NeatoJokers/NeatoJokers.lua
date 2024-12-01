@@ -98,11 +98,11 @@ SMODS.Joker {
     loc_txt = {
         name = 'Frosted Prime Rib',
         text = {
-            "For the next 22 hands", -- NOTE: should this be paramatised?
-            "every played card permanently gains"
-            "{C:chips}+#2#{} Chips and {C:mult}+#3#{} Mult",
-            "each time it is played.",
-            "{C:inactive}(Currently {C:chips}#3#{C:inactive} hands left)"
+            "For the next {C:attention}#3#{} hands", -- NOTE: should this be paramatised? NeatNote: Ye, I looked at en-us.lua in localization to get all the formatting of the descriptions correct! I referenced the Hiker and Seltzer joker
+            "Every played {C:attention}card{} permanently gains"
+            "{C:chips}+#2#{} Chips and {C:mult}+#2#{} Mult",
+            "when scored.",
+            --"{C:inactive}(Currently {C:chips}#3#{C:inactive} hands left)" Not necessary cuz the joker will now actively count down the hands in it's description :D 
         }
     },
     config = { extra  = { hands = 22, chip_mod = 2, mult_mod = 1, } }
@@ -111,7 +111,7 @@ SMODS.Joker {
     end,
     rarity = 2,
     atlas = "NeatoJokers",
-    pos = { x = 000, y = 000 }, -- TODO: get real pos values from sprite sheet
+    pos = { x = 2, y = 0 }, 
     cost = 5, --TODO: deduce reasonable cost
     calculate = function( self, card, context )
         if context.individual and context.cardarea == G.play then
