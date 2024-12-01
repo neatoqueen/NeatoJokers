@@ -92,3 +92,58 @@ SMODS.Joker {
             end
         end
 }
+
+SMODS.Joker {
+    key = 'neato_frostedprimerib'
+    loc_txt = {
+        name = 'Frosted Prime Rib',
+        text = {
+            "For the next 22 hands", -- NOTE: should this be paramatised?
+            "every played card permanently gains"
+            "{C:chips}+#2#{} Chips and {C:mult}+#3#{} Mult",
+            "each time it is played.",
+            "{C:inactive}(Currently {C:chips}#3#{C:inactive} hands left)"
+        }
+    },
+    config = { extra  = { hands = 22, chip_mod = 2, mult_mod = 1, } }
+    loc_vars = function( self, info_queue, card )
+        return { vars = { card.ability.extra.chip_mod, card.ability.extra.mult_mod, card.ability.extra.hands } }
+    end,
+    rarity = 2,
+    atlas = "NeatoJokers",
+    pos = { x = 000, y = 000 }, -- TODO: get real pos values from sprite sheet
+    cost = 5, --TODO: deduce reasonable cost
+    calculate = function( self, card, context )
+        if context.individual and context.cardarea == G.play then
+            context.other_card.ability.mult = context.other_card.ability.mult or 0
+            context.other_card.ability.mult = context.other_card.ability.mult + self.ability.extra.mult_mod
+            context.other_card.ability.perma_bonus = context.other_card.ability.perma_bonus or 0
+            context.other_card.ability.perma_bonus = context.other_card.ability.perma_bonus + self.ability.extra.chip_mod
+        end
+        elseif context.after and not context.blueprint then
+            self.ability.extra.hands = self.ability.extra.hands - 1
+            if card.ability.extra.hands <= 0 then
+                G.E_MANAGER:add_event(Event({
+                    func = function()
+                        play_sound('tarot1')
+                        card.T.r = -0.2
+                        card:juice_up(0.3, 0.4)
+                        card.states.drag.is = true
+                        card.children.center.pinch.x = true
+                        G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.3, blockable = false,
+                            func = function()
+                                    G.jokers:remove_card(card)
+                                    card:remove()
+                                    card = nil
+                                return true; end})) 
+                        return true
+                    end
+                })) 
+                return {
+                    message = localize('k_eaten_ex'),
+                    colour = G.C.RED
+                }
+            end
+        end
+    end
+}
