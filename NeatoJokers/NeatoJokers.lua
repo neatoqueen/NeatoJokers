@@ -92,34 +92,41 @@ SMODS.Joker {
 }
 
 SMODS.Joker {
-    key = 'frostedprimerib'
+    key = 'frostedprimerib',
     loc_txt = {
         name = 'Frosted Prime Rib',
         text = {
-            "For the next {C:attention}#3#{} hands", -- NOTE: should this be paramatised? NeatNote: Ye, I looked at en-us.lua in localization to get all the formatting of the descriptions correct! I referenced the Hiker and Seltzer joker
-            "Every played {C:attention}card{} permanently gains"
-            "{C:chips}+#1#{} Chips and {C:mult}+#2#{} Mult when scored",
-            --"{C:inactive}(Currently {C:chips}#3#{C:inactive} hands left)" Not necessary cuz the joker will now actively count down the hands in it's description :D 
+            "For the next {C:attention}#3#{} hands",
+            "Every played {C:attention}card{} permanently gains",
+            "{C:chips}+#1#{} Chips and {C:mult}+#2#{} Mult when scored"
         },
     },
-    config = { extra  = { hands = 22, chip_mod = 2, mult_mod = 1, } }
+    config = { extra  = { hands = 22, chip_mod = 2, mult_mod = 1, } },
     loc_vars = function( self, info_queue, card )
         return { vars = { card.ability.extra.chip_mod, card.ability.extra.mult_mod, card.ability.extra.hands } }
     end,
+    unlocked = true,
+    discovered = true,
+    blueprint_compat = true,
+    eternal_compat = true,
+    perishable_compat = true,
     rarity = 2,
     atlas = "NeatoJokers",
     pos = { x = 2, y = 0 }, 
     cost = 5, --TODO: deduce reasonable cost
---Idk whats wrong but this breaks the code when i add it
-    --[[ calculate = function( self, card, context )
+    calculate = function( self, card, context )
         if context.individual and context.cardarea == G.play then
             context.other_card.ability.mult = context.other_card.ability.mult or 0
-            context.other_card.ability.mult = context.other_card.ability.mult + self.ability.extra.mult_mod
+            context.other_card.ability.mult = context.other_card.ability.mult + card.ability.extra.mult_mod
             context.other_card.ability.perma_bonus = context.other_card.ability.perma_bonus or 0
-            context.other_card.ability.perma_bonus = context.other_card.ability.perma_bonus + self.ability.extra.chip_mod --I think it has something to do with this section here 
-        end
+            context.other_card.ability.perma_bonus = context.other_card.ability.perma_bonus + card.ability.extra.chip_mod
+            return {
+                extra = { message = localize('k_upgrade_ex'), colour = G.C.MULT },
+                colour = G.C.MULT,
+                card = card
+            }
         elseif context.after and not context.blueprint then
-            self.ability.extra.hands = self.ability.extra.hands - 1
+            card.ability.extra.hands = card.ability.extra.hands - 1
             if card.ability.extra.hands <= 0 then
                 G.E_MANAGER:add_event(Event({
                     func = function()
@@ -144,7 +151,7 @@ SMODS.Joker {
             end
         end
     end
-} ]]
+}
 
 SMODS.Joker { -- NeatNote: Thought I'd give this concept a try and it just works! 
     key = "dogsplayingbalatro",
