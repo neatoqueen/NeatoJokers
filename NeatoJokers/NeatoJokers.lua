@@ -98,7 +98,7 @@ SMODS.Joker {
         text = {
             "For the next {C:attention}#3#{} hands", -- NOTE: should this be paramatised? NeatNote: Ye, I looked at en-us.lua in localization to get all the formatting of the descriptions correct! I referenced the Hiker and Seltzer joker
             "Every played {C:attention}card{} permanently gains"
-            "{C:chips}+#1#{} Chips and {C:mult}+#2#{} Mult when scored.",
+            "{C:chips}+#1#{} Chips and {C:mult}+#2#{} Mult when scored",
             --"{C:inactive}(Currently {C:chips}#3#{C:inactive} hands left)" Not necessary cuz the joker will now actively count down the hands in it's description :D 
         },
     },
@@ -145,3 +145,26 @@ SMODS.Joker {
         end
     end
 } ]]
+
+SMODS.Joker { -- Gonna start just adding these in so we can focus on the calculate functions :D
+    key = "dogsplayingbalatro",
+    loc_txt = {
+        name = "Dogs Playing Balatro",
+        text = {"{C:green}#1# in #2#{} chance to fetch",
+                "a random {C:planet}Planet{} card",
+                "every hand played"},
+    },
+    unlocked = true,
+    discovered = true, 
+    blueprint_compat = true,
+    eternal_compat = true,
+    perishable_compat = true,
+    config = {{extra = 4}},
+    rarity = 3,
+    atlas = "NeatoJokers",
+    pos = { x = 3, y = 0 },
+    cost = 6, -- TODO:  and calculate function
+    loc_vars = function(self, info_queue, card)
+        return { vars = {''..(G.GAME and G.GAME.probabilities.normal or 1), card.ability.extra}}
+    end,
+}
