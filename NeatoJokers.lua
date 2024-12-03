@@ -5,13 +5,8 @@ SMODS.Atlas {
     py = 95,
 }
 
-local cards = {
-    'dogsplayingbalatro',
-    'frostedprimerib',
-    'icecreamsandwich',
-    'jokerOTY'
-}
-
-for v in pairs(cards) do
-    SMODS.load_file('cards/'..cards[v]..'.lua')()
+local subdir = "cards"
+local cards = NFS.getDirectoryItems(SMODS.current_mod.path .. subdir)
+for _, file in pairs(cards) do
+    SMODS.load_file(subdir .. "/" .. file)()
 end
