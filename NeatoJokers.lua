@@ -5,7 +5,13 @@ SMODS.Atlas {
     py = 95,
 }
 
-SMODS.load_file('cards/dogsplayingbalatro.lua')()
-SMODS.load_file('cards/frostedprimerib.lua')()
-SMODS.load_file('cards/icecreamsandwich.lua')()
-SMODS.load_file('cards/jokerOTY.lua')()
+local cards = {
+    'dogsplayingbalatro',
+    'frostedprimerib',
+    'icecreamsandwich',
+    'jokerOTY'
+}
+
+for v in pairs(cards) do
+    SMODS.load_file('cards/'..cards[v]..'.lua')()
+end
