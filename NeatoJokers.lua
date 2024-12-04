@@ -7,6 +7,10 @@ SMODS.Atlas {
 
 local subdir = "cards"
 local cards = NFS.getDirectoryItems(SMODS.current_mod.path .. subdir)
-for _, file in pairs(cards) do
-    SMODS.load_file(subdir .. "/" .. file)()
+for _, filename in pairs(cards) do
+    file, exception = SMODS.load_file(subdir .. "/" .. filename)
+    if exception then
+        error(exception)
+    end
+    file()
 end
