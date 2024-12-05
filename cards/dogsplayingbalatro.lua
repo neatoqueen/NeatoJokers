@@ -21,10 +21,10 @@ SMODS.Joker { -- NeatNote: Thought I'd give this concept a try and it just works
     end,
     calculate = function(self, card, context)
         if context.after and not context.blueprint then
-        if pseudorandom('dogs') < G.GAME.probabilities.normal/card.ability.extra then
-            G.E_MANAGER:add_event(Event({
-                 func = function() 
-                    local card = create_card('Planet',G.consumeables, nil, nil, nil, nil, nil, 'car')
+            if pseudorandom('dogs') < G.GAME.probabilities.normal/card.ability.extra then
+                G.E_MANAGER:add_event(Event({
+                    func = function()
+                        local card = create_card('Planet',G.consumeables, nil, nil, nil, nil, nil, 'car')
                         card:add_to_deck()
                         G.consumeables:emplace(card)
                         G.GAME.consumeable_buffer = 0
