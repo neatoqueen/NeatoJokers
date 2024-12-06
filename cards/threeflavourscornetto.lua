@@ -22,7 +22,7 @@ SMODS.Joker {
     pos = {x = 4, y = 0},
     cost = 5,
     calculate = function(self, card, context)
-        if not context.open_booster and not context.buying_card and not context.selling_self and not context.selling_card and not context.reroll_shop and not context.ending_shop and not context.skip_blind and not context.skipping_booster and not context.playing_card_added and not context.first_hand_drawn and not context.setting_blind and not context.destroying_card and not context.cards_destroyed and not context.remove_playing_cards and not context.using_consumeable and not context.debuffed_hand and not context.pre_discard and not context.discard and not context.end_of_round and not context.individual and not context.repetition and not context.other_joker and context.cardarea == G.jokers and not context.before and not context.after then
+        if context.joker_main then
             local suits = {
                 ['Hearts'] = 0,
                 ['Diamonds'] = 0,
