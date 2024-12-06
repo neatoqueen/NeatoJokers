@@ -20,34 +20,190 @@ local countSuits = function(context)
 end
 
 SMODS.Joker { 
-    key = "threeflavourscornetto",
+    key = "cornettowinchester",
     loc_txt = {
-        name = "Three Flavours Cornetto",
+        name = "The Winchester Cornetto",
         text = {
-            "{C:mult}+#1#{} Mult if played",
-            "hand contains",
+            "{C:chips}+#1#{} Chips if hand",
+            "played contains",
             "exactly {C:attention}#2#{} suits",
+            "This card is destroyed if hand",
+            "played contains",
+            "exactly {C:attention}#3#{} suits"
         },
     },
     loc_vars = function(self, info_queue, card)
-        return {vars = {card.ability.extra.mult, card.ability.extra.suits}}
+        return { vars = { card.ability.extra.chips, card.ability.extra.suits, card.ability.extra.suits_destroy } }
     end,
     unlocked = true,
     discovered = true,
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
-    config = {extra = { mult = 10, suits = 3}},
+    config = { extra = { chips = 50, suits = 3, suits_destroy = 4 }, no_pool_flag = 'winchester_cornetto_eaten' },
     rarity = 1,
     atlas = "NeatoJokers",
     pos = {x = 4, y = 0},
     cost = 5,
     calculate = function(self, card, context)
         if context.joker_main then
-            if countSuits(context) == card.ability.extra.suits then
+            local suits = countSuits(context)
+            if suits == card.ability.extra.suits then
+                return {
+                    message = localize{type='variable',key='a_chips',vars={card.ability.extra.chips}},
+                    chip_mod = card.ability.extra.chips
+                }
+            elseif suits == card.ability.extra.suits_destroy then
+                G.E_MANAGER:add_event(Event({
+                    func = function()
+                        play_sound('tarot1')
+                        card.T.r = -0.2
+                        card:juice_up(0.3, 0.4)
+                        card.states.drag.is = true
+                        card.children.center.pinch.x = true
+                        G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.3, blockable = false,
+                            func = function()
+                                    G.jokers:remove_card(card)
+                                    card:remove()
+                                    card = nil
+                                return true; end}))
+                        return true
+                    end
+                }))
+
+                G.GAME.pool_flags.winchester_cornetto_eaten = true
+
+                return {
+                    message = localize('k_eaten_ex'),
+                    colour = G.C.RED
+                }
+            end
+        end
+    end
+}
+
+SMODS.Joker {
+    key = "cornettogreatergood",
+    loc_txt = {
+        name = "The Greater Good Cornetto",
+        text = {
+            "{C:mult}+#1#{} Mult if hand",
+            "played contains",
+            "exactly {C:attention}#2#{} suits",
+            "This card is destroyed if hand",
+            "played contains",
+            "exactly {C:attention}#3#{} suits"
+        },
+    },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.mult, card.ability.extra.suits, card.ability.extra.suits_destroy } }
+    end,
+    unlocked = true,
+    discovered = true,
+    blueprint_compat = true,
+    eternal_compat = true,
+    perishable_compat = true,
+    config = { extra = { mult = 20, suits = 3, suits_destroy = 4 }, no_pool_flag = 'greatergood_cornetto_eaten', yes_pool_flag = 'winchester_cornetto_eaten' },
+    rarity = 1,
+    atlas = "NeatoJokers",
+    pos = {x = 4, y = 0},
+    cost = 5,
+    calculate = function(self, card, context)
+        if context.joker_main then
+            local suits = countSuits(context)
+            if suits == card.ability.extra.suits then
                 return {
                     message = localize{type='variable',key='a_mult',vars={card.ability.extra.mult}},
                     mult_mod = card.ability.extra.mult
+                }
+            elseif suits == card.ability.extra.suits_destroy then
+                G.E_MANAGER:add_event(Event({
+                    func = function()
+                        play_sound('tarot1')
+                        card.T.r = -0.2
+                        card:juice_up(0.3, 0.4)
+                        card.states.drag.is = true
+                        card.children.center.pinch.x = true
+                        G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.3, blockable = false,
+                            func = function()
+                                    G.jokers:remove_card(card)
+                                    card:remove()
+                                    card = nil
+                                return true; end}))
+                        return true
+                    end
+                }))
+
+                G.GAME.pool_flags.greatergood_cornetto_eaten = true
+
+                return {
+                    message = localize('k_eaten_ex'),
+                    colour = G.C.RED
+                }
+            end
+        end
+    end
+}
+
+SMODS.Joker {
+    key = "cornettoerrishuman",
+    loc_txt = {
+        name = "To Err Is Human, So Err Cornetto",
+        text = {
+            "{X:mult,C:white}X#1#{} Mult if hand",
+            "played contains",
+            "exactly {C:attention}#2#{} suits",
+            "This card is destroyed if hand",
+            "played contains",
+            "exactly {C:attention}#3#{} suits",
+            "{C:money}$#4#{s:0.85} when destroyed",
+        },
+    },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.x_mult, card.ability.extra.suits, card.ability.extra.suits_destroy, card.ability.extra.dollars } }
+    end,
+    unlocked = true,
+    discovered = true,
+    blueprint_compat = true,
+    eternal_compat = true,
+    perishable_compat = true,
+    config = { extra = { x_mult = 20, suits = 3, suits_destroy = 4, dollars = 33 }, no_pool_flag = 'errishuman_cornetto_eaten', yes_pool_flag = 'greatergood_cornetto_eaten' },
+    rarity = 1,
+    atlas = "NeatoJokers",
+    pos = {x = 4, y = 0},
+    cost = 5,
+    calculate = function(self, card, context)
+        if context.joker_main then
+            local suits = countSuits(context)
+            if suits == card.ability.extra.suits then
+                return {
+                    message = localize{type='variable',key='a_xmult',vars={card.ability.extra.x_mult}},
+                    Xmult_mod = card.ability.extra.x_mult
+                }
+            elseif suits == card.ability.extra.suits_destroy then
+                G.E_MANAGER:add_event(Event({
+                    func = function()
+                        play_sound('tarot1')
+                        card.T.r = -0.2
+                        card:juice_up(0.3, 0.4)
+                        card.states.drag.is = true
+                        card.children.center.pinch.x = true
+                        G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.3, blockable = false,
+                            func = function()
+                                    G.jokers:remove_card(card)
+                                    card:remove()
+                                    card = nil
+                                return true; end}))
+                        return true
+                    end
+                }))
+
+                ease_dollars(card.ability.extra.dollars)
+                G.GAME.pool_flags.errishuman_cornetto_eaten = true
+
+                return {
+                    message = localize('k_eaten_ex'),
+                    colour = G.C.RED
                 }
             end
         end
