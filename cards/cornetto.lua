@@ -25,11 +25,9 @@ SMODS.Joker {
         name = "The Winchester Cornetto",
         text = {
             "{C:chips}+#1#{} Chips if hand",
-            "played contains",
-            "exactly {C:attention}#2#{} suits",
+            "played contains exactly {C:attention}#2#{} suits",
             "This card is destroyed if hand",
-            "played contains",
-            "exactly {C:attention}#3#{} suits"
+            "played contains exactly {C:attention}#3#{} suits"
         },
     },
     loc_vars = function(self, info_queue, card)
@@ -88,11 +86,9 @@ SMODS.Joker {
         name = "The Greater Good Cornetto",
         text = {
             "{C:mult}+#1#{} Mult if hand",
-            "played contains",
-            "exactly {C:attention}#2#{} suits",
+            "played contains exactly {C:attention}#2#{} suits",
             "This card is destroyed if hand",
-            "played contains",
-            "exactly {C:attention}#3#{} suits"
+            "played contains exactly {C:attention}#3#{} suits"
         },
     },
     loc_vars = function(self, info_queue, card)
@@ -103,7 +99,7 @@ SMODS.Joker {
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
-    config = { extra = { mult = 20, suits = 3, suits_destroy = 4 }, no_pool_flag = 'greatergood_cornetto_eaten', yes_pool_flag = 'winchester_cornetto_eaten' },
+    config = { extra = { mult = 15, suits = 3, suits_destroy = 4 }, no_pool_flag = 'greatergood_cornetto_eaten', yes_pool_flag = 'winchester_cornetto_eaten' },
     rarity = 1,
     atlas = "NeatoJokers",
     pos = {x = 4, y = 0},
@@ -151,12 +147,10 @@ SMODS.Joker {
         name = "To Err Is Human, So Err Cornetto",
         text = {
             "{X:mult,C:white}X#1#{} Mult if hand",
-            "played contains",
-            "exactly {C:attention}#2#{} suits",
+            "played contains exactly {C:attention}#2#{} suits",
             "This card is destroyed if hand",
-            "played contains",
-            "exactly {C:attention}#3#{} suits",
-            "{C:money}$#4#{s:0.85} when destroyed",
+            "played contains exactly {C:attention}#3#{} suits",
+            "{C:money}$#4#{} when destroyed",
         },
     },
     loc_vars = function(self, info_queue, card)
@@ -167,7 +161,7 @@ SMODS.Joker {
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
-    config = { extra = { x_mult = 20, suits = 3, suits_destroy = 4, dollars = 33 }, no_pool_flag = 'errishuman_cornetto_eaten', yes_pool_flag = 'greatergood_cornetto_eaten' },
+    config = { extra = { x_mult = 5, suits = 3, suits_destroy = 4, dollars = 33 }, no_pool_flag = 'errishuman_cornetto_eaten', yes_pool_flag = 'greatergood_cornetto_eaten' },
     rarity = 1,
     atlas = "NeatoJokers",
     pos = {x = 4, y = 0},
