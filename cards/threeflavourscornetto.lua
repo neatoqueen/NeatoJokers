@@ -1,3 +1,24 @@
+local countSuits = function(context)
+    local suits = {
+        ['Hearts'] = 0,
+        ['Diamonds'] = 0,
+        ['Spades'] = 0,
+        ['Clubs'] = 0
+    }
+    for i = 1, #context.scoring_hand do
+        if context.scoring_hand[i].ability.name ~= 'Wild Card' then
+            for j,v in pairs(suits) do
+                if context.scoring_hand[i]:is_suit(j, true) then suits[j] = 1 end
+            end
+        elseif context.scoring_hand[i].ability.name == 'Wild Card' then
+            for j,v in pairs(suits) do
+                if context.scoring_hand[i]:is_suit(j) then suits[j] = 1 end
+            end
+        end
+    end
+    return suits["Hearts"] + suits["Diamonds"] + suits["Spades"] + suits["Clubs"]
+end
+
 SMODS.Joker { 
     key = "threeflavourscornetto",
     loc_txt = {
@@ -23,24 +44,7 @@ SMODS.Joker {
     cost = 5,
     calculate = function(self, card, context)
         if context.joker_main then
-            local suits = {
-                ['Hearts'] = 0,
-                ['Diamonds'] = 0,
-                ['Spades'] = 0,
-                ['Clubs'] = 0
-            }
-            for i = 1, #context.scoring_hand do
-                if context.scoring_hand[i].ability.name ~= 'Wild Card' then
-                    for j,v in pairs(suits) do
-                        if context.scoring_hand[i]:is_suit(j, true) then suits[j] = 1 end
-                    end
-                elseif context.scoring_hand[i].ability.name == 'Wild Card' then
-                    for j,v in pairs(suits) do
-                        if context.scoring_hand[i]:is_suit(j) then suits[j] = 1 end
-                    end
-                end
-            end
-            if suits["Hearts"] + suits["Diamonds"] + suits["Spades"] + suits["Clubs"] == card.ability.extra.suits then
+            if countSuits(context) == card.ability.extra.suits then
                 return {
                     message = localize{type='variable',key='a_mult',vars={card.ability.extra.mult}},
                     mult_mod = card.ability.extra.mult
