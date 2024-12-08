@@ -12,7 +12,7 @@ local countSuits = function(context)
             end
         elseif context.scoring_hand[i].ability.name == 'Wild Card' then
             for j,v in pairs(suits) do
-                if context.scoring_hand[i]:is_suit(j) then suits[j] = 1 end
+                if context.scoring_hand[i]:is_suit(j) and suits[j] == 0 then suits[j] = 1 break end
             end
         end
     end
