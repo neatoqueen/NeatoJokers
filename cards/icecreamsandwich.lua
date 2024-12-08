@@ -18,7 +18,7 @@ SMODS.Joker {
     cost = 5,
     loc_vars = function(self, info_queue, card)
         return {vars = {card.ability.Xmult, card.ability.extra}}
-      end, 
+    end,
     calculate = function(self, card, context)
     if context.end_of_round and not context.repetition and not context.game_over and not context.blueprint then
             if card.ability.Xmult - card.ability.extra <= 1 then 
