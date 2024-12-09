@@ -20,7 +20,7 @@ SMODS.Joker {
         return {vars = {card.ability.Xmult, card.ability.extra}}
     end,
     calculate = function(self, card, context)
-    if context.end_of_round and not context.repetition and not context.game_over and not context.blueprint then
+        if context.end_of_round and not context.repetition and not context.game_over and not context.blueprint and not context.individual then
             if card.ability.Xmult - card.ability.extra <= 1 then 
                 G.E_MANAGER:add_event(Event({
                     func = function()
