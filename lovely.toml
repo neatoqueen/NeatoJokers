@@ -11,12 +11,38 @@ pattern = '''
         end
 '''
 position = "after"
+match_indent = true
 payload = '''
-        if specific_vars.bonus_mult then
-            localize{type = 'other', key = 'card_extra_mult', nodes = desc_nodes, vars = {specific_vars.bonus_mult}}
+if specific_vars.bonus_mult then
+    localize{type = 'other', key = 'card_extra_mult', nodes = desc_nodes, vars = {specific_vars.bonus_mult}}
+end
+'''
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+pattern = '''
+        if _c.name ~= 'Stone Card' and ((specific_vars and specific_vars.bonus_chips) or _c.config.bonus) then
+            localize{type = 'other', key = 'card_extra_chips', nodes = desc_nodes, vars = {((specific_vars and specific_vars.bonus_chips) or _c.config.bonus)}}
         end
 '''
-match_indent = false
+position = "after"
+match_indent = true
+payload = '''
+if specific_vars and specific_vars.bonus_mult then
+    localize{type = 'other', key = 'card_extra_mult', nodes = desc_nodes, vars = {specific_vars.bonus_mult}}
+end
+'''
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = '''perma_bonus = self.ability and self.ability.perma_bonus or 0,'''
+position = "after"
+match_indent = true
+payload = '''perma_mult = self.ability and self.ability.perma_mult or 0,'''
 times = 1
 
 [[patches]]
@@ -28,8 +54,8 @@ pattern = '''
                     bonus_chips = (self.ability.bonus + (self.ability.perma_bonus or 0)) > 0 and (self.ability.bonus + (self.ability.perma_bonus or 0)) or nil,
 '''
 position = "after"
+match_indent = true
 payload = '''
-                    bonus_mult = self.ability.mult > 0 and self.ability.mult or nil
+            bonus_mult = self.ability.perma_mult > 0 and self.ability.perma_mult or nil
 '''
-match_indent = false
 times = 1

@@ -1,3 +1,11 @@
+local old_Card_get_chip_mult = Card.get_chip_mult
+function Card:get_chip_mult()
+    -- hook seems best for mod compat?
+    local mult = old_Card_get_chip_mult(self)
+    return mult + (self.ability.perma_mult or 0)
+end
+
+
 SMODS.Joker {
     key = 'frostedprimerib',
     loc_txt = {
@@ -23,10 +31,8 @@ SMODS.Joker {
     cost = 5, --TODO: deduce reasonable cost
     calculate = function( self, card, context )
         if context.individual and context.cardarea == G.play then
-            context.other_card.ability.mult = context.other_card.ability.mult or 0
-            context.other_card.ability.mult = context.other_card.ability.mult + card.ability.extra.mult_mod
-            context.other_card.ability.perma_bonus = context.other_card.ability.perma_bonus or 0
-            context.other_card.ability.perma_bonus = context.other_card.ability.perma_bonus + card.ability.extra.chip_mod
+            context.other_card.ability.perma_mult = (context.other_card.ability.perma_mult or 0) + card.ability.extra.mult_mod
+            context.other_card.ability.perma_bonus = (context.other_card.ability.perma_bonus or 0) + card.ability.extra.chip_mod
             return {
                 extra = { message = localize('k_upgrade_ex'), colour = G.C.MULT },
                 colour = G.C.MULT,
