@@ -27,7 +27,7 @@ SMODS.Joker {
     perishable_compat = true,
     rarity = 2,
     atlas = "NeatoJokers",
-    pos = { x = 2, y = 0 }, 
+    pos = { x = 8, y = 0 }, 
     cost = 5, --TODO: deduce reasonable cost
     calculate = function( self, card, context )
         if context.individual and context.cardarea == G.play then
