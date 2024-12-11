@@ -42,7 +42,7 @@ SMODS.Joker {
     no_pool_flag = 'winchester_cornetto_eaten',
     rarity = 1,
     atlas = "NeatoJokers",
-    pos = {x = 5, y = 0},
+    pos = {x = 1, y = 2},
     cost = 5,
     calculate = function(self, card, context)
         if context.joker_main then
@@ -105,7 +105,7 @@ SMODS.Joker {
     yes_pool_flag = 'winchester_cornetto_eaten',
     rarity = 1,
     atlas = "NeatoJokers",
-    pos = {x = 5, y = 0},
+    pos = {x = 2, y = 2},
     cost = 5,
     calculate = function(self, card, context)
         if context.joker_main then
@@ -169,7 +169,7 @@ SMODS.Joker {
     yes_pool_flag = 'greatergood_cornetto_eaten',
     rarity = 1,
     atlas = "NeatoJokers",
-    pos = {x = 5, y = 0},
+    pos = {x = 3, y = 2},
     cost = 5,
     calculate = function(self, card, context)
         if context.joker_main then
