@@ -16,7 +16,7 @@ SMODS.Joker {
     config = {extra = {earn_chance = 4, destroy_chance = 25, earn_amt = 10}},
     rarity = 1,
     atlas = "NeatoJokers",
-    pos = { x = 4, y = 0 },
+    pos = { x = 3, y = 0 },
     cost = 6,
     loc_vars = function(self, info_queue, card)
         return {
