@@ -14,7 +14,7 @@ SMODS.Joker { -- NeatNote: Thought I'd give this concept a try and it just works
     config = {extra = 4},
     rarity = 3,
     atlas = "NeatoJokers",
-    pos = { x = 3, y = 0 },
+    pos = { x = 6, y = 1 },
     cost = 6,
     loc_vars = function(self, info_queue, card)
         return { vars = {''..(G.GAME and G.GAME.probabilities.normal or 1), card.ability.extra}}
