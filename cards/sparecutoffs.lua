@@ -11,7 +11,7 @@ SMODS.Joker {
     discovered = true,
     blueprint_compat = true,
     eternal_compat = true,
-    perishable_compat = true,
+    perishable_compat = false,
     config = {extra = {chip_mod = 12, chips = 0}},
     rarity = 2,
     atlas = "NeatoJokers",
