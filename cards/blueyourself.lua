@@ -11,10 +11,10 @@ SMODS.Joker {
     eternal_compat = true,
     perishable_compat = true,
     config = { extra = 1 },
-    rarity = 2,
+    rarity = 3,
     atlas = "NeatoJokers",
     pos = { x = 0, y = 0 },
-    cost = 7,
+    cost = 8,
     calculate = function(self, card, context)
         if context.retrigger_joker_check and context.other_card ~= card and 
                 context.other_card.edition and context.other_card.edition.key == "e_foil" then
