@@ -32,7 +32,6 @@ SMODS.Joker {
             -- cannot use return, possibly not supported from this context?
             SMODS.eval_this(card, {message = localize('k_plustwo'), colour = G.C.MULT})
         elseif context.selling_card and context.card.area == G.jokers then
-            sendDebugMessage("sold joker!", "Neato")
             card.ability.extra.mult = 0
             -- cannot use return, possibly not supported from this context?
             SMODS.eval_this(card, {message = localize('k_twisted'), colour = G.C.MULT})
