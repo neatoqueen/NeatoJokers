@@ -7,5 +7,11 @@ return {
                 },
             },
         }
+    },
+    misc = {
+        dictionary = {
+            k_twisted = "Get it twisted!",
+            k_plustwo = "+2",
+        }
     }
 }
