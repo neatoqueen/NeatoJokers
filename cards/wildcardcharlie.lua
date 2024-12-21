@@ -1,12 +1,15 @@
 function count_wild_cards()
     local wild_card_counter = 0
-    for _, v in pairs(G.playing_cards) do
-        if v.config.center == G.P_CENTERS.m_wild then
-            -- TODO: should change to SMODS.has_enhancement once steamodded#305 gets merged
-            wild_card_counter = wild_card_counter + 1
+    if G.playing_cards then
+        for _, v in pairs(G.playing_cards) do
+            if v.config.center == G.P_CENTERS.m_wild then
+                -- TODO: should change to SMODS.has_enhancement once steamodded#305 gets merged
+                wild_card_counter = wild_card_counter + 1
+            end
         end
+        return wild_card_counter
     end
-    return wild_card_counter
+    return 0
 end
 
 SMODS.Joker {
