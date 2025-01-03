@@ -40,7 +40,7 @@ SMODS.Joker {
                 message = "+" .. card.ability.extra,
                 colour = G.C.MULT,
                 card = card
-              }
+            }
         end
     end
 }

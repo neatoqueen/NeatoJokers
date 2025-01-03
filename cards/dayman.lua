@@ -40,7 +40,12 @@ SMODS.Joker {
                 message = "+" .. card.ability.extra,
                 colour = G.C.MULT,
                 card = card
-              }
+            }
         end
     end
 }
+
+local daymanNightman = function (self, card, context, suit1, suit2)
+
+
+end
