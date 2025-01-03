@@ -3,7 +3,7 @@ SMODS.Joker {
     loc_txt = {
         name = "Nightman",
         text = {
-            "Gains {C:chips}+#1#{} Mult if hand",
+            "Gains {C:mult}+#1#{} Mult if hand",
             "played contains only {C:spades}Spade{} cards",
             "and {C:clubs}Club{} cards",
             "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)"
