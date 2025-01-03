@@ -1,10 +1,10 @@
-SMODS.Joker { -- NeatNote: Thought I'd give this concept a try and it just works!
+SMODS.Joker {
     key = "dogsplayingbalatro",
     loc_txt = {
         name = "Dogs Playing Balatro",
         text = {"{C:green}#1# in #2#{} chance to fetch",
-                "a random {C:planet}Planet{} card",
-                "every hand played"},
+                "a random {C:spectral}Spectral{} card",
+                "when a {C:planet}Planet{} card is used"},
     },
     unlocked = true,
     discovered = true, 
@@ -20,19 +20,19 @@ SMODS.Joker { -- NeatNote: Thought I'd give this concept a try and it just works
         return { vars = {''..(G.GAME and G.GAME.probabilities.normal or 1), card.ability.extra}}
     end,
     calculate = function(self, card, context)
-        if context.after and not context.blueprint then
+        if context.using_consumeable and context.consumeable.ability.set == "Planet" and #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
             if pseudorandom('dogs') < G.GAME.probabilities.normal/card.ability.extra then
+                G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
                 G.E_MANAGER:add_event(Event({
                     func = function()
-                        local card = create_card('Planet',G.consumeables, nil, nil, nil, nil, nil, 'car')
-                        card:add_to_deck()
+                        local card = SMODS.create_card{set = "Spectral", area = G.consumeables}
+                        card:add_to_deck()  -- is this needed?
                         G.consumeables:emplace(card)
                         G.GAME.consumeable_buffer = 0
                         return true
                     end
                 }))   
-                card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, 
-                {message = localize('k_plus_planet'), colour = G.C.SECONDARY_SET.Planet}) 
+                SMODS.eval_this(card, {message = localize('k_plus_spectral'), colour = G.C.SECONDARY_SET.Planet})
             end
         end
     end
