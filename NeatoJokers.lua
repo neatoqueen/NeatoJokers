@@ -5,12 +5,12 @@ SMODS.Atlas {
     py = 95,
 }
 
+-- load common util funcs
+assert(SMODS.load_file("common.lua"))()
+
+-- load all individual jokers
 local subdir = "cards"
 local cards = NFS.getDirectoryItems(SMODS.current_mod.path .. subdir)
 for _, filename in pairs(cards) do
-    local file, exception = SMODS.load_file(subdir .. "/" .. filename)
-    if exception then
-        error(exception)
-    end
-    file()
+    assert(SMODS.load_file(subdir .. "/" .. filename))()
 end
