@@ -29,12 +29,7 @@ SMODS.Joker {
                 mult_mod = card.ability.mult
             }
         end
-        if context.before and not context.blueprint then
-            for i = 1, #context.scoring_hand do
-                if context.scoring_hand[i].ability.name ~= 'Wild Card'
-                and not context.scoring_hand[i]:is_suit('Hearts', true)
-                and not context.scoring_hand[i]:is_suit('Diamonds', true) then return end
-            end
+        if context.before and not context.blueprint and is_hand_given_suits(context, 'Hearts', 'Diamonds') then
             card.ability.mult = card.ability.mult + card.ability.extra
             return {
                 message = "+" .. card.ability.extra,
@@ -44,8 +39,3 @@ SMODS.Joker {
         end
     end
 }
-
-local daymanNightman = function (self, card, context, suit1, suit2)
-
-
-end

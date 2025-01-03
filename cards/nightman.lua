@@ -20,7 +20,7 @@ SMODS.Joker {
     config = { extra = 3, mult = 0 },
     rarity = 1,
     atlas = "NeatoJokers",
-    pos = {x = 1, y = 1},
+    pos = {x = 2, y = 1},
     cost = 4,
     calculate = function(self, card, context)
         if context.joker_main then
@@ -29,12 +29,7 @@ SMODS.Joker {
                 mult_mod = card.ability.mult
             }
         end
-        if context.before and not context.blueprint then
-            for i = 1, #context.scoring_hand do
-                if context.scoring_hand[i].ability.name ~= 'Wild Card'
-                and not context.scoring_hand[i]:is_suit('Spades', true)
-                and not context.scoring_hand[i]:is_suit('Clubs', true) then return end
-            end
+        if context.before and not context.blueprint and is_hand_given_suits(context, 'Spades', 'Clubs') then
             card.ability.mult = card.ability.mult + card.ability.extra
             return {
                 message = "+" .. card.ability.extra,

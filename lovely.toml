@@ -59,3 +59,11 @@ payload = '''
             bonus_mult = self.ability.perma_mult > 0 and self.ability.perma_mult or nil
 '''
 times = 1
+
+[[patches]]
+[patches.copy]
+target = "functions/misc_functions.lua"
+position = "append"
+sources = [
+    "common.lua",
+]
