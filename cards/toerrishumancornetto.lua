@@ -42,10 +42,12 @@ SMODS.Joker {
                             card.children.center.pinch.x = true
                             G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.3, blockable = false,
                                 func = function()
-                                        G.jokers:remove_card(card)
-                                        card:remove()
-                                        card = nil
-                                    return true; end}))
+                                    G.jokers:remove_card(card)
+                                    card:remove()
+                                    card = nil
+                                    return true
+                                end
+                            }))
                             return true
                         end
                     }))

@@ -18,7 +18,7 @@ SMODS.Joker {
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
-    config = { extra = { chips = 50, suits = 3, suits_destroy = 4, chip_mod = 10 } },
+    config = { extra = { chips = 50, suits = 3, suits_destroy = 4, chip_mod = 50 } },
     rarity = 1,
     atlas = "NeatoJokers",
     pos = {x = 0, y = 2},
@@ -42,23 +42,26 @@ SMODS.Joker {
                             card.children.center.pinch.x = true
                             G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.3, blockable = false,
                                 func = function()
-                                        G.jokers:remove_card(card)
-                                        card:remove()
-                                        card = nil
-                                    return true; end}))
+                                    G.jokers:remove_card(card)
+                                    card:remove()
+                                    card = nil
+                                    return true
+                                end
+                            }))
                             return true
                         end
                     }))
 
                     G.E_MANAGER:add_event(Event({
                         func = function() 
-                            local card = create_card('Joker', G.jokers, nil, 0, nil, nil, 'greatergoodcornetto', 'winchester')
+                            local card = SMODS.create_card( { key = "greatergoodcornetto" } )
                             card:add_to_deck()
                             G.jokers:emplace(card)
                             card:start_materialize()
                             G.GAME.joker_buffer = 0
+                            return true
                         end
-                    }))
+                    }))   
 
                     return {
                         message = localize('b_next'),
