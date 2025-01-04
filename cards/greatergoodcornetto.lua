@@ -5,9 +5,9 @@ SMODS.Joker {
         text = {
             "{C:mult}+#1#{} Mult if hand",
             "played contains exactly {C:attention}#2#{} suits",
-            "Loses {C:mult}-#4#{} Mult if hand",
+            "{C:mult}-#4#{} Mult if hand",
             "played contains exactly {C:attention}#3#{} suits",
-            "Binge the next Cornetto when destroyed"
+            "{C:inactive}Binge the next Cornetto when destroyed"
         },
     },
     loc_vars = function(self, info_queue, card)
