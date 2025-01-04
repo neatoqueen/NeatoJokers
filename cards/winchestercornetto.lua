@@ -44,24 +44,16 @@ SMODS.Joker {
                                 func = function()
                                     G.jokers:remove_card(card)
                                     card:remove()
-                                    card = nil
+                                    local card = SMODS.create_card( { key = "j_neat_greatergoodcornetto" } )
+                                    card:add_to_deck()
+                                    G.jokers:emplace(card)
+                                    card:start_materialize()
                                     return true
                                 end
                             }))
                             return true
                         end
-                    }))
-
-                    G.E_MANAGER:add_event(Event({
-                        func = function() 
-                            local card = SMODS.create_card( { key = "greatergoodcornetto" } )
-                            card:add_to_deck()
-                            G.jokers:emplace(card)
-                            card:start_materialize()
-                            G.GAME.joker_buffer = 0
-                            return true
-                        end
-                    }))   
+                    }))  
 
                     return {
                         message = localize('b_next'),
