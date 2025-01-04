@@ -4,7 +4,7 @@ SMODS.Joker {
         name = "JokerZD",
         text = {"This Joker gains {X:mult,C:white}X#1#{} Mult for",
                 "every unique joker {C:attention}purchased{}",
-                "{C:inactive}(Currently {X:mult,C:white}X#2#{} {C:inactive{}Mult)"},
+                "{C:inactive}(Currently {X:mult,C:white}X#2#{} {C:inactive}Mult)"},
     },
     unlocked = true,
     discovered = true, 
@@ -17,7 +17,7 @@ SMODS.Joker {
     end,
     rarity = 3,
     atlas = "NeatoJokers",
-    pos = { x = 4, y = 0 },  -- needs art
+    pos = { x = 9, y = 0 },
     cost = 8,
     calculate = function(self, card, context)
         if context.buying_card and context.card.ability.set == "Joker" and context.card ~= card and not context.blueprint then
