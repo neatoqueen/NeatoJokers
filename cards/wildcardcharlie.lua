@@ -32,11 +32,11 @@ SMODS.Joker {
         return { vars = {card.ability.extra.hand_gain,
                          card.ability.extra.discard_loss,
                          card.ability.extra.wild_card_ratio,
-                         count_wild_cards()}}
+                         count_enhancement('m_wild')}}
     end,
     calculate = function(self, card, context)
         if context.setting_blind and not (context.blueprint_card or self).getting_sliced then
-            local wild_card_counter = count_wild_cards()
+            local wild_card_counter = count_enhancement('m_wild')
             local conversion = math.floor(wild_card_counter / card.ability.extra.wild_card_ratio)
             if conversion > 0 then
                 G.E_MANAGER:add_event(Event({func = 

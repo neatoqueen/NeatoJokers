@@ -27,3 +27,15 @@ function count_suits(context)
     end
     return suits["Hearts"] + suits["Diamonds"] + suits["Spades"] + suits["Clubs"]
 end
+
+function count_enhancement(enhancement)
+    -- sum of total amount of cards in deck with given enhancement
+    -- e.g. 'm_wild'
+    local counter = 0
+    for _, v in pairs(G.playing_cards or {}) do
+        if SMODS.has_enhancement(v, enhancement) then
+            counter = counter + 1
+        end
+    end
+    return counter
+end
