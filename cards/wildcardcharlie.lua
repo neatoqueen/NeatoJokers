@@ -1,14 +1,11 @@
 function count_wild_cards()
     local wild_card_counter = 0
-    if G.playing_cards then
-        for _, v in pairs(G.playing_cards) do
-            if SMODS.has_enhancement(v, 'm_wild') then
-                wild_card_counter = wild_card_counter + 1
-            end
+    for _, v in pairs(G.playing_cards or {}) do
+        if SMODS.has_enhancement(v, 'm_wild') then
+            wild_card_counter = wild_card_counter + 1
         end
-        return wild_card_counter
     end
-    return 0
+    return wild_card_counter
 end
 
 SMODS.Joker {
