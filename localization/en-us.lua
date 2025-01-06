@@ -12,6 +12,7 @@ return {
         dictionary = {
             k_twisted = "Get it twisted!",
             k_plustwo = "+2",
+            k_cow = "Moo!",
         }
     }
 }
