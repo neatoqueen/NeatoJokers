@@ -1,3 +1,18 @@
+function any_foils()
+    -- returns bool
+    local areas = {G.playing_cards, G.jokers}
+    for _, area in pairs(areas) do
+        cards = area and area.cards and area.cards or {}  -- safety first!
+        for _, card in pairs(cards) do
+            if card.edition and card.edition.key == "e_foil" then
+                return true
+            end
+        end
+    end
+
+    return false
+end
+
 SMODS.Joker {
     key = "blueyourself",
     loc_txt = {
@@ -5,12 +20,18 @@ SMODS.Joker {
         text = {"Retriggers {C:attention}Jokers{} and {C:attention}cards{}",
                 "with the {C:dark_edition}Foil{} edition"},
     },
+    config = { extra = 1 },
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue+1] = G.P_CENTERS.e_foil
+    end,
+    in_pool = function(self, args)
+        return any_foils()
+    end,
     unlocked = true,
     discovered = true, 
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
-    config = { extra = 1 },
     rarity = 3,
     atlas = "NeatoJokers",
     pos = { x = 0, y = 0 },
