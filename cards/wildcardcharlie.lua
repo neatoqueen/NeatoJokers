@@ -1,13 +1,3 @@
-function count_wild_cards()
-    local wild_card_counter = 0
-    for _, v in pairs(G.playing_cards or {}) do
-        if SMODS.has_enhancement(v, 'm_wild') then
-            wild_card_counter = wild_card_counter + 1
-        end
-    end
-    return wild_card_counter
-end
-
 SMODS.Joker {
     key = "wildcardcharlie",
     loc_txt = {
