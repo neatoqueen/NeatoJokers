@@ -2,6 +2,8 @@
 version = "1.0.0"
 priority = 0
 
+# the following patches are to allow permanent extra mult
+
 [[patches]]
 [patches.pattern]
 target = "functions/common_events.lua"
@@ -56,6 +58,6 @@ pattern = '''
 position = "after"
 match_indent = true
 payload = '''
-            bonus_mult = self.ability.perma_mult > 0 and self.ability.perma_mult or nil
+            bonus_mult = (self.ability.perma_mult and self.ability.perma_mult > 0) and self.ability.perma_mult or nil
 '''
 times = 1

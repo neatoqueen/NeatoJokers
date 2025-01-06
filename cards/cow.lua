@@ -10,6 +10,9 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue+1] = {set = "Tag", key = "tag_uncommon"}
     end,
+    in_pool = function(self, args)
+        return count_enhancement('m_steel') > 0
+    end,
     unlocked = true,
     discovered = true, 
     blueprint_compat = true,

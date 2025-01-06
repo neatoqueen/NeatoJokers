@@ -8,22 +8,25 @@ SMODS.Joker {
                 "currently in your deck",
                 "{C:inactive}(Currently {C:attention}#4#{C:inactive} Wild Cards)"},
     },
-    unlocked = true,
-    discovered = true,
-    blueprint_compat = true,
-    eternal_compat = true,
-    perishable_compat = true,
     config = {extra = {hand_gain = 1, discard_loss = 1, wild_card_ratio = 3}},
-    rarity = 2,
-    atlas = "NeatoJokers",
-    pos = { x = 0, y = 1 },
-    cost = 6,
     loc_vars = function(self, info_queue, card)
         return { vars = {card.ability.extra.hand_gain,
                          card.ability.extra.discard_loss,
                          card.ability.extra.wild_card_ratio,
                          count_enhancement('m_wild')}}
     end,
+    in_pool = function(self, args)
+        return count_enhancement('m_wild') > 0
+    end,
+    unlocked = true,
+    discovered = true,
+    blueprint_compat = true,
+    eternal_compat = true,
+    perishable_compat = true,
+    rarity = 2,
+    atlas = "NeatoJokers",
+    pos = { x = 0, y = 1 },
+    cost = 6,
     calculate = function(self, card, context)
         if context.setting_blind and not (context.blueprint_card or self).getting_sliced then
             local wild_card_counter = count_enhancement('m_wild')
