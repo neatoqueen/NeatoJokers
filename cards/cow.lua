@@ -24,7 +24,6 @@ SMODS.Joker {
     cost = 6,
     calculate = function(self, card, context)
         if context.first_hand_drawn then
-            print_debug("G.GAME.current_round = " .. tprint(G.GAME.current_round, 2))
             juice_card_until(card, function() return G.GAME.current_round.hands_played == 0 end, true)
         elseif context.before and G.GAME.current_round.hands_played == 0 then
             local contains_steel = false
