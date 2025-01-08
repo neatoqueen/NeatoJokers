@@ -29,12 +29,16 @@ SMODS.Joker {
         elseif context.ending_shop and not context.repetition and not context.game_over and not context.blueprint and not context.individual then
             -- using context.ending_shop, but maybe a different time is more fitting?
             card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_gain
-            -- cannot use return, possibly not supported from this context?
-            SMODS.eval_this(card, {message = localize('k_plustwo'), colour = G.C.MULT})
+            return {
+                message = localize('k_plustwo'),
+                colour = G.C.MULT
+            }
         elseif context.selling_card and context.card.area == G.jokers then
             card.ability.extra.mult = 0
-            -- cannot use return, possibly not supported from this context?
-            SMODS.eval_this(card, {message = localize('k_twisted'), colour = G.C.MULT})
+            return {
+                message = localize('k_twisted'),
+                colour = G.C.MULT
+            }
         end
     end
 }

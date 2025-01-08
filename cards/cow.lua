@@ -35,7 +35,6 @@ SMODS.Joker {
             end
             if contains_steel then
                 -- create tag
-                SMODS.eval_this(context.blueprint_card or card, {message = localize('k_cow')})
                 G.E_MANAGER:add_event(Event({
                     func = (function()
                         add_tag(Tag('tag_uncommon'))
@@ -44,6 +43,10 @@ SMODS.Joker {
                         return true
                     end)
                 }))
+                return {
+                    card = context.blueprint_card or card,
+                    message = localize('k_cow'),
+                }
             end
         end
     end

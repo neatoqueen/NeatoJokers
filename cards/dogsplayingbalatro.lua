@@ -31,8 +31,11 @@ SMODS.Joker {
                         G.GAME.consumeable_buffer = 0
                         return true
                     end
-                }))   
-                SMODS.eval_this(card, {message = localize('k_plus_spectral'), colour = G.C.SECONDARY_SET.Planet})
+                }))
+                return {
+                    message = localize('k_plus_spectral'),
+                    colour = G.C.SECONDARY_SET.Planet,
+                }
             end
         end
     end

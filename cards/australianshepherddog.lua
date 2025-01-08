@@ -33,7 +33,11 @@ SMODS.Joker {
                         return true
                     end
                 }))
-                SMODS.eval_this(whoami, {message = localize('k_plus_planet'), colour = G.C.SECONDARY_SET.Planet})
+                return {
+                    card = whoami,
+                    message = localize('k_plus_planet'),
+                    colour = G.C.SECONDARY_SET.Planet,
+                }
             end
         end
     end

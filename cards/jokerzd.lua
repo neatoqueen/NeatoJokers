@@ -24,7 +24,9 @@ SMODS.Joker {
             if not card.ability.extra.seen[context.card.label] then
                 card.ability.extra.seen[context.card.label] = true
                 card.ability.Xmult = card.ability.Xmult + card.ability.extra.scaling
-                SMODS.eval_this(card, {message = localize('k_upgrade_ex')})
+                return {
+                    message = localize('k_upgrade_ex'),
+                }
             end
         end
     end
