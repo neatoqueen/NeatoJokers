@@ -2,9 +2,9 @@ SMODS.Joker {
     key = "lockin",
     loc_txt = {
         name = "Lock-In Joker",
-        text = {"This Joker gains {C:mult}+#1#{} Mult per",
-                "{C:attention}consecutive{} round played",
-                "without {C:attention}selling{} a joker",
+        text = {"This Joker gains {C:mult}+#1#{} Mult",
+                "at the end of {C:attention}round{} if {C:attention}no{}",
+                "jokers were {C:attention}sold{} this round",
                 "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)"}
     },
     unlocked = true,
@@ -12,7 +12,7 @@ SMODS.Joker {
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = false,
-    config = {extra = {mult_gain = 2, mult = 0, noboost = true}},
+    config = {extra = {mult_gain = 2, mult = 0, boost = true}},
     rarity = 1,
     atlas = "NeatoJokers",
     pos = { x = 6, y = 0 },
@@ -28,14 +28,14 @@ SMODS.Joker {
             }
         elseif context.end_of_round and not context.repetition and not context.game_over
         and not context.blueprint and not context.individual then
-            if card.ability.extra.noboost then
-                card.ability.extra.noboost = false
+            if card.ability.extra.boost then
+                card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_gain
+                -- cannot use return, possibly not supported from this context?
+                SMODS.eval_this(card, {message = localize('k_plustwo'), colour = G.C.MULT})
             end
-            card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_gain
-            -- cannot use return, possibly not supported from this context?
-            SMODS.eval_this(card, {message = localize('k_plustwo'), colour = G.C.MULT})
+            card.ability.extra.boost = true
         elseif context.selling_card and context.card.area == G.jokers then
-            card.ability.extra.noboost = true
+            card.ability.extra.boost = false
             -- cannot use return, possibly not supported from this context?
             SMODS.eval_this(card, {message = localize('k_twisted'), colour = G.C.MULT})
         end
