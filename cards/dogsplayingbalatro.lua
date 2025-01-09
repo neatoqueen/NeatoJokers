@@ -4,7 +4,8 @@ SMODS.Joker {
         name = "Dogs Playing Balatro",
         text = {"{C:green}#1# in #2#{} chance to fetch",
                 "a random {C:spectral}Spectral{} card",
-                "when a {C:planet}Planet{} card is used"},
+                "when a {C:planet}Planet{} card is used",
+                "{C:inactive}(Must have room){}"},
     },
     unlocked = true,
     discovered = true, 
@@ -33,7 +34,7 @@ SMODS.Joker {
                     end
                 }))
                 return {
-                    message = localize('k_plus_spectral'),
+                    message = localize('k_dog'),
                     colour = G.C.SECONDARY_SET.Planet,
                 }
             end

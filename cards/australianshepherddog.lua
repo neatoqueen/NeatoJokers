@@ -4,7 +4,8 @@ SMODS.Joker {
         name = "Australian Shepherd Dog",
         text = {"{C:green}#1# in #2#{} chance to create",
                 "a random {C:planet}Planet{} card",
-                "at the start of round"},
+                "at the start of round",
+                "{C:inactive}(Must have room){}"},
     },
     unlocked = true,
     discovered = true, 
@@ -35,7 +36,7 @@ SMODS.Joker {
                 }))
                 return {
                     card = whoami,
-                    message = localize('k_plus_planet'),
+                    message = localize('k_dog'),
                     colour = G.C.SECONDARY_SET.Planet,
                 }
             end

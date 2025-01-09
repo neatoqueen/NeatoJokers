@@ -11,17 +11,22 @@ SMODS.Joker {
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
-    config = {Xmult = 5, extra = 1},
+    config = {extra = {Xmult = 5, decrease = 1}},
     rarity = 2,
     atlas = "NeatoJokers",
     pos = {x = 2, y = 0},
     cost = 5,
     loc_vars = function(self, info_queue, card)
-        return {vars = {card.ability.Xmult, card.ability.extra}}
+        return {vars = {card.ability.extra.Xmult, card.ability.extra.decrease}}
     end,
     calculate = function(self, card, context)
-        if context.end_of_round and not context.repetition and not context.game_over and not context.blueprint and not context.individual then
-            if card.ability.Xmult - card.ability.extra <= 1 then 
+        if context.joker_main then
+            return {
+                message = localize{type='variable', key='a_xmult', vars={card.ability.extra.Xmult}},
+                Xmult_mod = card.ability.extra.Xmult
+            }
+        elseif context.end_of_round and not context.repetition and not context.game_over and not context.blueprint and not context.individual then
+            if card.ability.extra.Xmult - card.ability.extra.decrease <= 1 then 
                 G.E_MANAGER:add_event(Event({
                     func = function()
                         play_sound('tarot1')
@@ -43,9 +48,9 @@ SMODS.Joker {
                     colour = G.C.RED
                 }
             else
-                card.ability.Xmult = card.ability.Xmult - card.ability.extra
+                card.ability.extra.Xmult = card.ability.extra.Xmult - card.ability.extra.decrease
                 return {
-                    message = localize{type='variable',key='a_mult_minus',vars={card.ability.extra}},
+                    message = localize{type='variable',key='a_mult_minus',vars={card.ability.extra.decrease}},
                     colour = G.C.RED
                 }
             end

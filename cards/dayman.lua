@@ -18,7 +18,7 @@ SMODS.Joker {
     eternal_compat = true,
     perishable_compat = true,
     config = { extra = 3, mult = 0 },
-    rarity = 1,
+    rarity = 2,
     atlas = "NeatoJokers",
     pos = {x = 1, y = 1},
     cost = 4,
