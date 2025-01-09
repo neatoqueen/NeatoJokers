@@ -3,8 +3,8 @@ SMODS.Joker {
     loc_txt = {
         name = "Lock-In Joker",
         text = {"This Joker gains {C:mult}+#1#{} Mult",
-                "at the end of {C:attention}round{} if {C:attention}no{}",
-                "jokers were {C:attention}sold{} this round",
+                "when {C:attention}blind{} is selected if",
+                "{C:attention}no{} jokers were {C:attention}sold{} last round",
                 "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)"}
     },
     unlocked = true,
@@ -26,12 +26,11 @@ SMODS.Joker {
                 message = localize{type='variable',key='a_mult',vars={card.ability.extra.mult}},
                 mult_mod = card.ability.extra.mult
             }
-        elseif context.end_of_round and not context.repetition and not context.game_over
-        and not context.blueprint and not context.individual then
+        elseif context.setting_blind and not context.repetition and not context.blueprint then
             if card.ability.extra.boost then
                 card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_gain
                 -- cannot use return, possibly not supported from this context?
-                SMODS.eval_this(card, {message = localize('k_plustwo'), colour = G.C.MULT})
+                SMODS.eval_this(card, {message = localize('k_lockin'), colour = G.C.MULT})
             end
             card.ability.extra.boost = true
         elseif context.selling_card and context.card.area == G.jokers then
