@@ -14,6 +14,7 @@ return {
             k_plustwo = "+2",
             k_cow = "Moo!",
             k_dog = "Woof!",
+            k_gasp = "Gasp!",
         }
     }
 }
