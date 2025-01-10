@@ -40,18 +40,13 @@ SMODS.Joker {
             end
             if context.destroying_card == card.ability.extra.card_to_destroy then  -- not elseif
                 card.ability.extra.x_mult = card.ability.extra.x_mult + card.ability.extra.scaling
-                G.E_MANAGER:add_event(Event({
-                    func = function()
-                        SMODS.calculate_effect({
-                            message = localize('k_upgrade_ex'),
-                            colour = G.C.MULT,
-                        }, card)
-                        return true
-                    end}))
                 return {
+                    extra = {
+                        message = localize('k_upgrade_ex'),
+                        colour = G.C.MULT,
+                        juice_card = card,
+                    },
                     message = localize('k_gasp'),
-                    -- colour = G.C.MULT,
-                    -- juice_card = card,
                 }
             end
         end
