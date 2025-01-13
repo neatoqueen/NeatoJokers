@@ -32,13 +32,9 @@ SMODS.Joker {
             }
         elseif context.before then
             -- reset chosen card to destroy
-            card.ability.extra.card_to_destroy = nil
+            card.ability.extra.card_to_destroy = pseudorandom_element(context.scoring_hand, pseudoseed("night"))
         elseif context.destroying_card and not context.blueprint then
-            if not card.ability.extra.card_to_destroy then
-                -- first time only, figure out which card to destroy
-                card.ability.extra.card_to_destroy = pseudorandom_element(context.full_hand, pseudoseed("night"))
-            end
-            if context.destroying_card == card.ability.extra.card_to_destroy then  -- not elseif
+            if context.destroying_card == card.ability.extra.card_to_destroy then
                 card.ability.extra.x_mult = card.ability.extra.x_mult + card.ability.extra.scaling
                 return {
                     extra = {
