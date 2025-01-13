@@ -11,19 +11,25 @@ SMODS.Joker {
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
-    config = { extra = {scaling = 0.1, seen = {}}, Xmult = 1 },
+    config = { extra = {scaling = 0.1, seen = {}, x_mult = 1 } },
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.scaling, card.ability.Xmult } }
+        return { vars = { card.ability.extra.scaling, card.ability.x_mult } }
     end,
     rarity = 3,
     atlas = "NeatoJokers",
     pos = { x = 9, y = 0 },
     cost = 8,
     calculate = function(self, card, context)
-        if context.buying_card and context.card.ability.set == "Joker" and context.card ~= card and not context.blueprint then
+        if context.joker_main and card.ability.extra.x_mult > 1 then
+            return {
+                message = localize{type='variable',key='a_xmult',vars={card.ability.extra.x_mult}},
+                xmult_mod = card.ability.extra.x_mult,
+                colour = G.C.MULT,
+            }
+        elseif context.buying_card and context.card.ability.set == "Joker" and context.card ~= card and not context.blueprint then
             if not card.ability.extra.seen[context.card.label] then
                 card.ability.extra.seen[context.card.label] = true
-                card.ability.Xmult = card.ability.Xmult + card.ability.extra.scaling
+                card.ability.extra.x_mult = card.ability.extra.x_mult + card.ability.extra.scaling
                 return {
                     message = localize('k_upgrade_ex'),
                 }
