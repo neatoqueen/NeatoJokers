@@ -14,6 +14,7 @@ return {
             k_twisted = "Get it twisted!",
             k_cow = "Moo!",
             k_dog = "Woof!",
+            k_gasp = "Gasp!",
         }
     }
 }
