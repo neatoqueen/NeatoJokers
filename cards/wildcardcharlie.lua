@@ -36,10 +36,13 @@ SMODS.Joker {
                     function()
                         ease_discard(-conversion, false, true)
                         ease_hands_played(conversion, false)
-                        SMODS.eval_this(context.blueprint_card or card, {message = localize('k_swapped_ex')})
                         return true
                     end
                 }))
+                return {
+                    card = context.blueprint_card or card,
+                    message = localize('k_swapped_ex')
+                }
             end
         end
     end

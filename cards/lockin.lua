@@ -29,14 +29,18 @@ SMODS.Joker {
         elseif context.setting_blind and not context.repetition and not context.blueprint then
             if card.ability.extra.boost then
                 card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_gain
-                -- cannot use return, possibly not supported from this context?
-                SMODS.eval_this(card, {message = localize('k_lockin'), colour = G.C.MULT})
+                return {
+                    message = localize('k_lockin'),
+                    colour = G.C.MULT
+                }
             end
             card.ability.extra.boost = true
         elseif context.selling_card and context.card.area == G.jokers then
             card.ability.extra.boost = false
-            -- cannot use return, possibly not supported from this context?
-            SMODS.eval_this(card, {message = localize('k_twisted'), colour = G.C.MULT})
+            return {
+                message = localize('k_twisted'),
+                colour = G.C.MULT
+            }
         end
     end
 }
