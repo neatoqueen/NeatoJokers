@@ -17,7 +17,7 @@ SMODS.Joker {
     discovered = true,
     blueprint_compat = true,
     eternal_compat = true,
-    perishable_compat = true,
+    perishable_compat = false,
     rarity = 2,
     atlas = "NeatoJokers",
     pos = {x = 2, y = 1},
