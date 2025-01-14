@@ -13,7 +13,7 @@ SMODS.Joker {
     perishable_compat = true,
     config = { extra = {scaling = 0.1, seen = {}, x_mult = 1 } },
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.scaling, card.ability.x_mult } }
+        return { vars = { card.ability.extra.scaling, card.ability.extra.x_mult } }
     end,
     rarity = 3,
     atlas = "NeatoJokers",
