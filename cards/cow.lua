@@ -8,7 +8,7 @@ SMODS.Joker {
     },
     config = {},
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue+1] = {set = "Tag", key = "tag_uncommon"}
+        info_queue[#info_queue+1] = G.P_TAGS.tag_uncommon
     end,
     in_pool = function(self, args)
         return count_enhancement('m_steel') > 0
