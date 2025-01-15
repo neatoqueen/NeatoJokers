@@ -23,7 +23,9 @@ SMODS.Joker {
     pos = {x = 1, y = 1},
     cost = 6,
     calculate = function(self, card, context)
-        if context.joker_main and card.ability.extra.x_mult > 1 then
+        if context.first_hand_drawn then
+            juice_card_until(card, function() return G.GAME.current_round.hands_played == 0 end, true)
+        elseif context.joker_main and card.ability.extra.x_mult > 1 then
             return {
                 message = localize{type='variable',key='a_xmult',vars={card.ability.extra.x_mult}},
                 xmult_mod = card.ability.extra.x_mult,
