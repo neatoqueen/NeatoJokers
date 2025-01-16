@@ -34,6 +34,10 @@ SMODS.Joker {
                 ease_dollars(card.ability.extra.earn_amt)
                 card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil,
                     {message = localize('$') .. card.ability.extra.earn_amt, colour = G.C.MONEY})
+            else
+                return {
+                    message = localize('k_nope_ex')
+                }
             end
         elseif context.end_of_round and not context.repetition and not context.game_over and not context.blueprint and not context.individual then
             if pseudorandom('stand') < G.GAME.probabilities.normal/card.ability.extra.destroy_chance then
