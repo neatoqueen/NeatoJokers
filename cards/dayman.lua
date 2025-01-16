@@ -9,7 +9,7 @@ SMODS.Joker {
             "{C:inactive}(Currently {X:mult,C:white}X#2#{} {C:inactive}Mult){}",
         },
     },
-    config = { extra = { x_mult = 1, scaling = 0.75 } },
+    config = { extra = { x_mult = 1, scaling = 0.5 } },
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.scaling, card.ability.extra.x_mult } }
     end,
