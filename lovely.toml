@@ -58,6 +58,6 @@ pattern = '''
 position = "after"
 match_indent = true
 payload = '''
-            bonus_mult = (self.ability.perma_mult and self.ability.perma_mult > 0) and self.ability.perma_mult or nil
+            bonus_mult = (self.ability.perma_mult and self.ability.perma_mult > 0) and self.ability.perma_mult or nil,
 '''
 times = 1

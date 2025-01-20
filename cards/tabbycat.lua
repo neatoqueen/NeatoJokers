@@ -2,33 +2,33 @@ SMODS.Joker {
     key = "tabbycat",
     loc_txt = {
         name = "Tabby Cat",
-        text = {"Played cards with {C:attention}no{} modifiers",
-                "give {C:mult}+#1#{} Mult when scored",
-                "{C:inactive}(enhancements, seals or editions){}"},
+        text = {"This Joker gains {C:chips}+#1#{} Chips for every",
+                "card played in {C:attention}final{} poker hand",
+                "{C:inactive}(Currently {C:chips}+#2#{C:inactive} Chips)"},
     },
+    config = { extra = { chips = 0, chip_gain = 9 } },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.chip_gain, card.ability.extra.chips } }
+    end,
     unlocked = true,
     discovered = true, 
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
-    config = {mult = 2},
     rarity = 1,
     atlas = "NeatoJokers",
     pos = { x = 6, y = 1 },
-    cost = 4,
-    loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.mult } }
-    end,
+    cost = 5,
     calculate = function(self, card, context)
-        if context.individual and context.cardarea == G.play then
-            if context.other_card.ability.set ~= "Enhanced" and 
-                    context.other_card.seal == nil and 
-                    context.other_card.edition == nil then
-                return {
-                    mult = card.ability.mult,
-                    card = card
-                }
-            end
+        if context.before and G.GAME.current_round.hands_left == 0 and not context.repetition then
+            card.ability.extra.chips = card.ability.extra.chips + card.ability.extra.chip_gain * #context.scoring_hand
+            return {
+                message = localize('k_upgrade_ex'),
+            }
+        elseif context.joker_main and card.ability.extra.chips > 0 then
+            return {
+                chips = card.ability.extra.chips,
+            }
         end
     end
 }
