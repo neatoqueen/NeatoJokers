@@ -2,44 +2,41 @@ SMODS.Joker {
     key = "hatsunejoku",
     loc_txt = {
         name = "Hatsune Joku",
-        text = {"{C:attention}Retrigger{} played {C:attention}3s{} and {C:attention}9s{}",
-                "and give {C:chips}+9{} and {C:chips}+3{} Chips",
-                "when scored respectively"},
+        text = {"This Joker gains {C:chips}+#1#{} Chips when",
+                "a {C:clubs}Club{} or {C:spades}Spade{} card is {C:attention}destroyed{}",
+                "{C:inactive}(Currently {C:chips}+#2#{} {C:inactive}Chips)"},
     },
+    config = { extra = {chips = 0, chip_gain = 39} },
+    loc_vars = function( self, info_queue, card )
+        return { vars = { card.ability.extra.chip_gain, card.ability.extra.chips } }
+    end,
     unlocked = true,
     discovered = true, 
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
-    config = { extra = {repetitions = 1} },
-    loc_vars = function( self, info_queue, card )
-        return { vars = { card.ability.extra.chips } }
-    end,
     rarity = 2,
     atlas = "NeatoJokers",
     pos = { x = 5, y = 0 },
     cost = 5,
     calculate = function(self, card, context)
-        if context.cardarea == G.play and (context.other_card:get_id() == 3 or context.other_card:get_id() == 9) then
-            if context.repetition and not context.repetition_only then
-                return {
-                    message = 'Again!',
-                    repetitions = card.ability.extra.repetitions,
-                    card = card
-                }
-            elseif context.individual and not context.repetition then
-                if context.other_card:get_id() == 3 then
-                    return {
-                      chips = 9,
-                      card = card
-                    }
-                else
-                    return {
-                      chips = 3,
-                      card = card
-                    }
+        if context.joker_main and card.ability.extra.chips > 0 then
+            return {
+                chips = card.ability.extra.chips,
+            }
+        elseif context.remove_playing_cards and not context.blueprint then
+            local increases = 0
+            for _, card in pairs(context.removed) do
+                if card:is_suit("Clubs") or card:is_suit("Spades") then
+                    increases = increases + 1
                 end
             end
+            card.ability.extra.chips = card.ability.extra.chips + card.ability.extra.chip_gain * increases
+            return {
+                message = localize("k_upgrade_ex"),
+                colour = G.C.CHIPS,
+                focus = card,
+            }
         end
     end
 }
