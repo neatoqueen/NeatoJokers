@@ -1,3 +1,8 @@
+SMODS.current_mod.optional_features = {
+    -- enable additional SMODS contexts that can be CPU intensive
+    retrigger_joker = true,  -- for blue yourself
+}
+
 SMODS.Atlas {
     key = "NeatoJokers",
     path = "NeatoJokers.png",
