@@ -27,7 +27,7 @@ SMODS.Joker {
         if context.joker_main and card.ability.extra.x_mult > 1 then
             return {
                 message = localize{type='variable',key='a_xmult',vars={card.ability.extra.x_mult}},
-                xmult_mod = card.ability.extra.x_mult,
+                Xmult_mod = card.ability.extra.x_mult,
                 colour = G.C.MULT,
             }
         elseif context.before then
