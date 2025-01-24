@@ -31,12 +31,14 @@ SMODS.Joker {
                     increases = increases + 1
                 end
             end
-            card.ability.extra.chips = card.ability.extra.chips + card.ability.extra.chip_gain * increases
-            return {
-                message = localize("k_upgrade_ex"),
-                colour = G.C.CHIPS,
-                focus = card,
-            }
+            if increases > 0 then
+                card.ability.extra.chips = card.ability.extra.chips + card.ability.extra.chip_gain * increases
+                return {
+                    message = localize("k_upgrade_ex"),
+                    colour = G.C.CHIPS,
+                    focus = card,
+                }
+            end
         end
     end
 }
