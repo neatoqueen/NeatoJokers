@@ -1,4 +1,11 @@
 SMODS.Atlas {
+    key = "NJ_modicon",
+    path = "mod_icon.png",
+    px = 34,
+    py = 34,
+}
+
+SMODS.Atlas {
     key = "NeatoJokers",
     path = "NeatoJokers.png",
     px = 71,
