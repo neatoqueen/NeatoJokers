@@ -22,7 +22,7 @@ SMODS.Joker {
     pos = { x = 0, y = 1 },
     cost = 6,
     calculate = function(self, card, context)
-        if context.individual and (context.cardarea == G.play or context.cardarea == G.hand) then
+        if context.individual and (context.cardarea == G.play or context.cardarea == G.hand) and not context.end_of_round then
             if SMODS.has_enhancement(context.other_card, "m_wild") then
                 return {
                     x_mult = card.ability.extra.x_mult,
