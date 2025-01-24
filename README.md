@@ -1,8 +1,10 @@
-A vanilla-like joker expansion mod with references to my favorite youtube/twitch creators and tv shows! 
 
-![Njlogo-export](https://github.com/user-attachments/assets/b8557954-122b-4f95-8afb-d04c41d9803a)
 
-Bugs? Feedback? Report here: [Google Form](https://forms.gle/Riyai7krZrmHRfsJ8)
+![Njlogo-export](https://github.com/user-attachments/assets/b8557954-122b-4f95-8afb-d04c41d9803a) <br>
+A **vanilla-like joker expansion mod** with references <br>to my favorite *youtube/twitch creators, tv shows* and<br> whatever other jokers I draw for fun!<br>
+***Requires [latest version of Steamodded](https://github.com/Steamodded/smods/wiki)***
+### Bugs? Feedback?<br> Report here: [Google Form](https://forms.gle/Riyai7krZrmHRfsJ8)
+
 
 # About Me
 ![AneatoHiBWNEW2](https://github.com/user-attachments/assets/5f1b6ded-700a-432e-b323-a8b4f6ded044) I'm Neato! I'm a pixel artist and part-time streamer.
@@ -29,10 +31,10 @@ You can also find more of my joker art in these other vanilla-like mods
 
 <details> 
 <summary> Creator Jokers </summary>
-- Frosted Prime Rib <br>
-- Lock In Joker <br>
-- Unpaid Intern <br>
-- JokerZD
+- Frosted Prime Rib <a href="https://www.youtube.com/channel/UCnrdFUk_XfPJooztStcHG4g">Frost Prime</a><br>
+- Lock In Joker <a href="https://www.youtube.com/NorthernLion">Northernlion</a><br>
+- Unpaid Intern <a href="https://www.youtube.com/@stanz">Stanz</a><br>
+- JokerZD <a href=https://www.youtube.com/@ProZD">ProZD</a>
 </details>
 
 <details>
