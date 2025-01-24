@@ -27,9 +27,7 @@ SMODS.Joker {
             juice_card_until(card, function() return G.GAME.current_round.hands_played == 0 end, true)
         elseif context.joker_main and card.ability.extra.x_mult > 1 then
             return {
-                message = localize{type='variable',key='a_xmult',vars={card.ability.extra.x_mult}},
-                xmult_mod = card.ability.extra.x_mult,
-                colour = G.C.MULT,
+                xmult = card.ability.extra.x_mult
             }
         elseif context.destroying_card and not context.blueprint then
             if #context.full_hand == 1 and context.full_hand[1]:get_id() == 12 and G.GAME.current_round.hands_played == 0 then
