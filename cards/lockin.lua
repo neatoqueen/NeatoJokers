@@ -32,7 +32,7 @@ SMODS.Joker {
                 message = localize('k_lockin'),
                 colour = G.C.MULT
             }
-        elseif context.selling_card and context.card.area == G.jokers then
+        elseif context.selling_card and context.card.area == G.jokers and not context.blueprint then
             card.ability.extra.mult = 0
             return {
                 message = localize('k_twisted'),
