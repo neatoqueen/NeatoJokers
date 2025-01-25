@@ -1,5 +1,5 @@
 SMODS.Atlas {
-    key = "NJ_modicon",
+    key = "modicon",
     path = "mod_icon.png",
     px = 34,
     py = 34,
