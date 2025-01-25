@@ -19,7 +19,7 @@ SMODS.Joker {
     rarity = 1,
     atlas = "NeatoJokers",
     pos = { x = 6, y = 1 },
-    cost = 5,
+    cost = 6,
     calculate = function(self, card, context)
         if context.joker_main and card.ability.extra.mult > 0 then
             return {
