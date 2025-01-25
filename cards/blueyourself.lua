@@ -43,7 +43,7 @@ SMODS.Joker {
             return {
                 message = localize("k_again_ex"),
                 repetitions = card.ability.extra,
-                focus = card
+                message_card = context.blueprint_card or card
             }
         elseif context.repetition and not context.repetition_only and 
                 context.other_card and context.other_card.edition and context.other_card.edition.key == "e_foil" then
@@ -51,7 +51,7 @@ SMODS.Joker {
             return {
                 message = localize("k_again_ex"),
                 repetitions = card.ability.extra,
-                focus = card
+                card = card
             }
         end
     end

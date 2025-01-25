@@ -23,7 +23,6 @@ SMODS.Joker {
     pos = {x = 2, y = 1},
     cost = 7,
     calculate = function(self, card, context)
-        -- print_debug("context = " .. tprint(context, 1))
         if context.joker_main and card.ability.extra.x_mult > 1 then
             return {
                 message = localize{type='variable',key='a_xmult',vars={card.ability.extra.x_mult}},
@@ -43,6 +42,7 @@ SMODS.Joker {
                         juice_card = card,
                     },
                     message = localize('k_gasp'),
+                    remove = true,
                 }
             end
         end
