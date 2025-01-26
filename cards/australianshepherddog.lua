@@ -1,7 +1,7 @@
 SMODS.Joker {
-    key = "australianshepherddog",
+    key = "australianshepherd",
     loc_txt = {
-        name = "Australian Shepherd Dog",
+        name = "Australian Shepherd",
         text = {"Create a random {C:planet}Planet{} card",
                 "when {C:attention}Blind{} is selected",
                 "{C:inactive}(Must have room){}"},
@@ -22,7 +22,7 @@ SMODS.Joker {
             G.E_MANAGER:add_event(Event({
                 func = function()
                     local card = SMODS.create_card{set = "Planet", area = G.consumeables}
-                    card:add_to_deck()  -- is this needed?
+                    card:add_to_deck()
                     G.consumeables:emplace(card)
                     G.GAME.consumeable_buffer = 0
                     return true
