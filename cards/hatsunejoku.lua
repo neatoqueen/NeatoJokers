@@ -18,7 +18,6 @@ SMODS.Joker {
     calculate = function(self, card, context)
         if context.cardarea == G.play and context.repetition and not context.repetition_only then
             if context.other_card:get_id() == 9 then
-                -- TODO: test this
                 return {
                     message = localize('k_again_ex'),
                     repetitions = card.ability.extra.repetitions,
