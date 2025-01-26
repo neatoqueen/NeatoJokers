@@ -7,6 +7,7 @@ SMODS.Joker {
     },
     config = {extra = {x_mult = 1.5}},
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue+1] = G.P_CENTERS.m_wild
         return { vars = { card.ability.extra.x_mult }}
     end,
     in_pool = function(self, args)

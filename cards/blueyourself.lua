@@ -2,7 +2,7 @@ function any_foils()
     -- returns bool
     local areas = {G.playing_cards, G.jokers}
     for _, area in pairs(areas) do
-        cards = area and area.cards and area.cards or {}  -- safety first!
+        cards = area and area.cards or {}  -- safety first!
         for _, card in pairs(cards) do
             if card.edition and card.edition.key == "e_foil" then
                 return true
