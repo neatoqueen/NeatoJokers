@@ -21,10 +21,9 @@ SMODS.Joker {
         return { vars = {card.ability.extra.chip_mod, localize('Two Pair', 'poker_hands'), card.ability.extra.chips}}
     end,
     calculate = function(self, card, context)
-        if context.joker_main then
+        if context.joker_main and card.ability.extra.chips > 0 then
             return {
-                message = localize{type='variable',key='a_chips',vars={card.ability.extra.chips}},
-                chip_mod = card.ability.extra.chips
+                chips = card.ability.extra.chips
             }
         elseif context.before and next(context.poker_hands['Two Pair']) and not context.blueprint then
             -- no need to check context.poker_hands for 'Full House', since 'Two Pair' will be provided even with bigger hands present
