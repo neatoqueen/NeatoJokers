@@ -35,7 +35,7 @@ SMODS.Joker {
         elseif context.selling_card and context.card.area == G.jokers and not context.blueprint then
             card.ability.extra.mult = 0
             return {
-                message = localize('k_twisted'),
+                message = localize('k_caught'),
                 delay = 0.9,  -- `delay` is weird, it is not a "wait X sec and then do", it is "hold this for X sec"
                 colour = G.C.MULT
             }
