@@ -2,11 +2,12 @@ SMODS.Joker {
     key = "wildcardcharlie",
     loc_txt = {
         name = "Wild Card Charlie",
-        text = {"{C:attention}Wild Cards{} give {X:mult,C:white}X#1#{} when",
+        text = {"{C:attention}Wild Cards{} give {X:mult,C:white}X#1#{} Mult when",
                 "scored or when held in hand"},
     },
     config = {extra = {x_mult = 1.5}},
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue+1] = G.P_CENTERS.m_wild
         return { vars = { card.ability.extra.x_mult }}
     end,
     in_pool = function(self, args)
@@ -20,7 +21,7 @@ SMODS.Joker {
     rarity = 2,
     atlas = "NeatoJokers",
     pos = { x = 0, y = 1 },
-    cost = 6,
+    cost = 7,
     calculate = function(self, card, context)
         if context.individual and (context.cardarea == G.play or context.cardarea == G.hand) and not context.end_of_round then
             if SMODS.has_enhancement(context.other_card, "m_wild") and not context.other_card.debuff then
