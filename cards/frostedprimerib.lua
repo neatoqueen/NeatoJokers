@@ -28,7 +28,7 @@ SMODS.Joker {
     rarity = 2,
     atlas = "NeatoJokers",
     pos = { x = 7, y = 0 }, 
-    cost = 5, --TODO: deduce reasonable cost
+    cost = 6,
     calculate = function( self, card, context )
         if context.individual and context.cardarea == G.play then
             context.other_card.ability.perma_mult = (context.other_card.ability.perma_mult or 0) + card.ability.extra.mult_mod

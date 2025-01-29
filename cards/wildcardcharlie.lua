@@ -21,7 +21,7 @@ SMODS.Joker {
     rarity = 2,
     atlas = "NeatoJokers",
     pos = { x = 0, y = 1 },
-    cost = 6,
+    cost = 7,
     calculate = function(self, card, context)
         if context.individual and (context.cardarea == G.play or context.cardarea == G.hand) and not context.end_of_round then
             if SMODS.has_enhancement(context.other_card, "m_wild") and not context.other_card.debuff then

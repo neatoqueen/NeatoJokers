@@ -15,7 +15,7 @@ SMODS.Joker {
     rarity = 2,
     atlas = "NeatoJokers",
     pos = {x = 2, y = 0},
-    cost = 5,
+    cost = 6,
     loc_vars = function(self, info_queue, card)
         return {vars = {card.ability.extra.Xmult, card.ability.extra.decrease}}
     end,
