@@ -17,7 +17,10 @@ I plan to keep making more jokers and adding them in batches of 15!
 My pixel art is featured in Balatro! You can find me in the credits of the game. <br>
 I am responsible for the **Slay the Spire**, **Binding of Isaac** and **Shovel Knight** friends of Jimbo collabs 
 
-![NeatoFriends2](https://github.com/user-attachments/assets/f6044581-e256-400b-adbc-b60586119820)
+<details> 
+<summary> Click to check out my Friends of Jimbo! </summary>
+<img src="https://github.com/user-attachments/assets/f6044581-e256-400b-adbc-b60586119820" alt="Neato FoJs">
+</details>
 
 Follow me on [twitch](https://www.twitch.tv/neato)! 
 *I stream my pixel art process, Balatro, Rocket League and other roguelikes a couple times a week.*
