@@ -17,7 +17,7 @@ SMODS.Atlas {
     py = 95,
 }
 
--- load common util funcs
+-- load common util funcs, SMODS UI functions, and the hooks our mod uses
 assert(SMODS.load_file("common.lua"))()
 
 -- safe-guard against nested folders (unapplied lovely patches)
