@@ -21,7 +21,7 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                "" .. (G.GAME and G.GAME.probabilities.normal or 1),
+                G.GAME and G.GAME.probabilities.normal or 1,
                 card.ability.extra.earn_chance,
                 card.ability.extra.destroy_chance,
                 card.ability.extra.earn_amt
@@ -29,11 +29,11 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        if context.after and not context.repetition then
+        if context.before then
             if pseudorandom('stand') < G.GAME.probabilities.normal/card.ability.extra.earn_chance then
-                ease_dollars(card.ability.extra.earn_amt)
-                card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil,
-                    {message = localize('$') .. card.ability.extra.earn_amt, colour = G.C.MONEY})
+                return {
+                    dollars = card.ability.extra.earn_amt
+                }
             end
         elseif context.end_of_round and not context.repetition and not context.game_over and not context.blueprint and not context.individual then
             if pseudorandom('stand') < G.GAME.probabilities.normal/card.ability.extra.destroy_chance then
