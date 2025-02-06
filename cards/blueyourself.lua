@@ -41,13 +41,15 @@ SMODS.Joker {
     pos = { x = 0, y = 0 },
     cost = 8,
     calculate = function(self, card, context)
-        if context.retrigger_joker_check and context.other_card.config.center.key ~= self.key and
+        if context.retrigger_joker_check and 
+                context.other_card.config.center.key ~= self.key and context.other_ret.jokers.was_blueprinted == nil and
                 context.other_card.edition and context.other_card.edition.key == "e_foil" then
             -- joker card retriggers using .retrigger_joker_check
             return {
                 message = localize("k_again_ex"),
                 repetitions = card.ability.extra,
-                message_card = context.blueprint_card or card
+                message_card = context.blueprint_card or card,
+                was_blueprinted = context.blueprint,
             }
         elseif context.repetition and not context.repetition_only and 
                 context.other_card and context.other_card.edition and context.other_card.edition.key == "e_foil" then
@@ -55,7 +57,8 @@ SMODS.Joker {
             return {
                 message = localize("k_again_ex"),
                 repetitions = card.ability.extra,
-                card = card
+                card = card,
+                was_blueprinted = context.blueprint,
             }
         end
     end
