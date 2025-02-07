@@ -1,17 +1,19 @@
-
-
 ![Njlogo-export](https://github.com/user-attachments/assets/b8557954-122b-4f95-8afb-d04c41d9803a) <br>
 A **vanilla-like joker expansion mod** with references <br>to my favorite *youtube/twitch creators, tv shows* and<br> whatever other jokers I draw for fun!<br>
-***Requires [latest version of Steamodded](https://github.com/Steamodded/smods/wiki)***
 ### Bugs? Feedback?<br> Report here: [Google Form](https://forms.gle/Riyai7krZrmHRfsJ8)
 
+# Installation
+Requires `steamodded-1.0.0~ALPHA-1324a` or newer - [link](https://github.com/Steamodded/smods/wiki).
+
+Get the latest stable version of NeatoJokers from the [Releases](https://github.com/neatoqueen/NeatoJokers/releases/latest), then download and extract the zip.
+
+If you get a "Failed to detect NeatoJokers lovely patches" error, make sure your folders aren't nested (a `neato-jokers-mod` folder inside a `neato-jokers-mod` folder).
 
 # About Me
 ![AneatoHiBWNEW2](https://github.com/user-attachments/assets/5f1b6ded-700a-432e-b323-a8b4f6ded044) I'm Neato! I'm a pixel artist and part-time streamer.
 
 I drew all the jokers for this mod over the course of of a year. You may have seen them on my [twitter](https://x.com/NEAT0QUEEN), [reddit](https://www.reddit.com/user/neatoqueen/submitted/) or [bluesky](https://bsky.app/profile/neato.live). <br> 
-I plan to keep making more jokers and adding them in batches of 15! 
-
+I plan to keep making more jokers and adding them in batches of 15!
 
 
 My pixel art is featured in Balatro! You can find me in the credits of the game. <br>
