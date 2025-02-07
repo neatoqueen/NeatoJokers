@@ -1,14 +1,5 @@
-SMODS.Joker { 
+SMODS.Joker {
     key = "nightman",
-    loc_txt = {
-        name = "Nightman",
-        text = {
-            "When a {C:attention}hand{} is played,",
-            "{C:attention}destroy{} a random scoring card",
-            "and gain {X:mult,C:white}X#1#{} Mult",
-            "{C:inactive}(Currently {X:mult,C:white}X#2#{} {C:inactive}Mult){}",
-        },
-    },
     config = { extra = { x_mult = 1, scaling = 0.1 } },
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.scaling, card.ability.extra.x_mult } }

@@ -40,6 +40,21 @@ function count_enhancement(enhancement)
     return counter
 end
 
+function any_foils()
+    -- returns bool
+    local areas = {G.playing_cards, G.jokers}
+    for _, area in pairs(areas) do
+        local cards = area and area.cards or {}  -- safety first!
+        for _, card in pairs(cards) do
+            if card.edition and card.edition.key == "e_foil" then
+                return true
+            end
+        end
+    end
+
+    return false
+end
+
 -- description tab loc vars in mods menu
 SMODS.current_mod.description_loc_vars = function()
     -- shadow is still awaiting PR as of 2025/02/02, see https://github.com/Steamodded/smods/pull/433
@@ -74,4 +89,11 @@ function loc_colour(_c, _default)
     end
 
     return old_loc_colour(_c, _default)
+end
+
+local old_Card_get_chip_mult = Card.get_chip_mult
+function Card:get_chip_mult()
+    -- hook seems best for mod compat?
+    local mult = old_Card_get_chip_mult(self)
+    return mult + (self.ability.perma_mult or 0)
 end

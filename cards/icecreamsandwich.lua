@@ -1,13 +1,7 @@
 SMODS.Joker {
-    key = "icecreamsandwich", 
-    loc_txt = {
-        name = "Ice Cream Sandwich",
-        text = {"{X:mult,C:white} X#1# {} Mult",
-                "loses {X:mult,C:white} X#2# {} Mult per",
-                "round played"},
-    }, 
-    unlocked = true, 
-    discovered = true, 
+    key = "icecreamsandwich",
+    unlocked = true,
+    discovered = true,
     blueprint_compat = true,
     eternal_compat = false,
     perishable_compat = true,

@@ -1,12 +1,5 @@
 SMODS.Joker {
     key = "lockin",
-    loc_txt = {
-        name = "Lock-In Joker",
-        text = {"This Joker gains {C:mult}+#1#{} Mult",
-                "when {C:attention}Blind{} is selected,",
-                "resets when a Joker is {C:attention}sold{}",
-                "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)"}
-    },
     unlocked = true,
     discovered = true,
     blueprint_compat = true,

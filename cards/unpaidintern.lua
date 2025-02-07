@@ -1,11 +1,5 @@
 SMODS.Joker {
     key = "unpaidintern",
-    loc_txt = {
-        name = "Unpaid Intern",
-        text = {"Every {C:attention}9{} and {C:attention}5",
-                "gives {C:chips}+#1#{} Chips when scored",
-        },
-    },
     unlocked = true,
     discovered = true, 
     blueprint_compat = true,

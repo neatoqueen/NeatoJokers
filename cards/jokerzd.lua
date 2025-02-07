@@ -1,11 +1,5 @@
 SMODS.Joker {
     key = "jokerzd",
-    loc_txt = {
-        name = "JokerZD",
-        text = {"This Joker gains {X:mult,C:white}X#1#{} Mult for",
-                "every unique joker {C:attention}purchased{}",
-                "{C:inactive}(Currently {X:mult,C:white}X#2#{} {C:inactive}Mult)"},
-    },
     unlocked = true,
     discovered = true, 
     blueprint_compat = true,

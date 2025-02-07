@@ -1,10 +1,5 @@
 SMODS.Joker {
     key = "hatsunejoku",
-    loc_txt = {
-        name = "Hatsune Joku",
-        text = {"{C:attention}Retrigger{} played {C:attention}9s{}",
-                "an additional {C:attention}two{} times"},
-    },
     config = { extra = { repetitions = 2 } },
     unlocked = true,
     discovered = true, 

@@ -1,11 +1,5 @@
 SMODS.Joker {
     key = "tabbycat",
-    loc_txt = {
-        name = "Tabby Cat",
-        text = {"This Joker gains {C:mult}+#1#{} Mult",
-                "every {C:attention}#2#{} {C:inactive}[#3#]{} cards discarded",
-                "{C:inactive}(Currently {C:mult}+#4#{C:inactive} Mult)"},
-    },
     config = { extra = { mult = 0, mult_gain = 2, discards = 9, discards_remaining = 9 } },
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.mult_gain, card.ability.extra.discards, 

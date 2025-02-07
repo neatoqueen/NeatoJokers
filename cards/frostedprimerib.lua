@@ -1,21 +1,5 @@
-local old_Card_get_chip_mult = Card.get_chip_mult
-function Card:get_chip_mult()
-    -- hook seems best for mod compat?
-    local mult = old_Card_get_chip_mult(self)
-    return mult + (self.ability.perma_mult or 0)
-end
-
-
 SMODS.Joker {
     key = 'frostedprimerib',
-    loc_txt = {
-        name = 'Frosted Prime Rib',
-        text = {
-            "For the next {C:attention}#3#{} hands",
-            "Every played {C:attention}card{} permanently gains",
-            "{C:chips}+#1#{} Chips and {C:mult}+#2#{} Mult when scored"
-        },
-    },
     config = { extra  = { hands = 22, chip_mod = 2, mult_mod = 1, } },
     loc_vars = function( self, info_queue, card )
         return { vars = { card.ability.extra.chip_mod, card.ability.extra.mult_mod, card.ability.extra.hands } }
@@ -56,7 +40,7 @@ SMODS.Joker {
                                 return true; end})) 
                         return true
                     end
-                })) 
+                }))
                 return {
                     message = localize('k_eaten_ex'),
                     colour = G.C.RED

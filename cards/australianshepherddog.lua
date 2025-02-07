@@ -1,11 +1,5 @@
 SMODS.Joker {
     key = "australianshepherd",
-    loc_txt = {
-        name = "Australian Shepherd",
-        text = {"Create a random {C:planet}Planet{} card",
-                "when {C:attention}Blind{} is selected",
-                "{C:inactive}(Must have room){}"},
-    },
     unlocked = true,
     discovered = true, 
     blueprint_compat = true,

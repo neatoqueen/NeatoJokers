@@ -1,13 +1,5 @@
 SMODS.Joker {
     key = "bananastand",
-    loc_txt = {
-        name = "The Banana Stand",
-        text = {"{C:green}#1# in #2#{} chance for played",
-                "{C:attention}hand{} to give {C:money}$#4#{},",
-                "{C:green}#1# in #3#{} chance this card",
-                "is {C:red}destroyed{} at the end of round",
-                "{C:inactive}Lose ALL money if destroyed{}"},
-    },
     unlocked = true,
     discovered = true,
     blueprint_compat = true,

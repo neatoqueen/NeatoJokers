@@ -1,12 +1,5 @@
 SMODS.Joker {
     key = "dogsplayingbalatro",
-    loc_txt = {
-        name = "Dogs Playing Balatro",
-        text = {"{C:green}#1# in #2#{} chance to fetch",
-                "a random {C:spectral}Spectral{} card",
-                "when a {C:planet}Planet{} card is used",
-                "{C:inactive}(Must have room){}"},
-    },
     unlocked = true,
     discovered = true, 
     blueprint_compat = true,

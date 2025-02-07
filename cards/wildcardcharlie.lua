@@ -1,10 +1,5 @@
 SMODS.Joker {
     key = "wildcardcharlie",
-    loc_txt = {
-        name = "Wild Card Charlie",
-        text = {"{C:attention}Wild Cards{} give {X:mult,C:white}X#1#{} Mult when",
-                "scored or when held in hand"},
-    },
     config = {extra = {x_mult = 1.5}},
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue+1] = G.P_CENTERS.m_wild

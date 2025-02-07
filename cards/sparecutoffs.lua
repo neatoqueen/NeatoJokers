@@ -1,12 +1,5 @@
 SMODS.Joker {
     key = "sparecutoffs",
-    loc_txt = {
-        name = "Spare Cutoffs",
-        text = {"This Joker gains {C:chips}+#1#{} Chips",
-                "if played hand contains",
-                "a {C:attention}#2#",
-                "{C:inactive}(Currently {C:chips}+#3#{C:inactive} Chips)"},
-    },
     unlocked = true,
     discovered = true,
     blueprint_compat = true,

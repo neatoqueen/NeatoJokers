@@ -1,14 +1,5 @@
 SMODS.Joker { 
     key = "dayman",
-    loc_txt = {
-        name = "Dayman",
-        text = {
-            "If {C:attention}first hand{} of round is",
-            "a single {C:attention}Queen{}, destroy it and",
-            "gain {X:mult,C:white}X#1#{} Mult",
-            "{C:inactive}(Currently {X:mult,C:white}X#2#{} {C:inactive}Mult){}",
-        },
-    },
     config = { extra = { x_mult = 1, scaling = 0.5 } },
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.scaling, card.ability.extra.x_mult } }

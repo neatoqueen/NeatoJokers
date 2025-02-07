@@ -1,26 +1,5 @@
-function any_foils()
-    -- returns bool
-    local areas = {G.playing_cards, G.jokers}
-    for _, area in pairs(areas) do
-        cards = area and area.cards or {}  -- safety first!
-        for _, card in pairs(cards) do
-            if card.edition and card.edition.key == "e_foil" then
-                return true
-            end
-        end
-    end
-
-    return false
-end
-
 SMODS.Joker {
     key = "blueyourself",
-    loc_txt = {
-        name = "Blue Yourself",
-        text = {"Retriggers {C:attention}Jokers{} and {C:attention}cards{}",
-                "with the {C:dark_edition}Foil{} edition",
-                "{C:inactive}(Excluding Blue Yourself){}"},
-    },
     config = { extra = 1 },
     loc_vars = function(self, info_queue, card)
         if not (card.edition and card.edition.key == "e_foil") then
@@ -40,8 +19,20 @@ SMODS.Joker {
     atlas = "NeatoJokers",
     pos = { x = 0, y = 0 },
     cost = 8,
+    add_to_deck = function(self, card, from_debuff)
+        -- don't tell Neato I put this in
+        if not from_debuff and next(SMODS.find_card(self.key, true)) then
+            -- check if there's already a blueyourself joker present
+            -- apparently returns aren't supported from this context, so use the old-fashioned way
+            card_eval_status_text(card, 'extra', nil, nil, nil, {
+                message = localize('k_dozens'),
+                colour = G.C.BLUE,
+                delay = 2,  -- `delay` is "hold this for X sec"
+            })
+        end
+    end,
     calculate = function(self, card, context)
-        if context.retrigger_joker_check and 
+        if context.retrigger_joker_check and
                 context.other_card.config.center.key ~= self.key and context.other_ret.jokers.was_blueprinted == nil and
                 context.other_card.edition and context.other_card.edition.key == "e_foil" then
             -- joker card retriggers using .retrigger_joker_check
