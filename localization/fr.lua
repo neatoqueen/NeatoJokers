@@ -26,7 +26,7 @@ return {
                 text = {
                     "Déclenche à nouveau les {C:attention}Jokers{} et les {C:attention}cartes{}",
                     "avec une édition {C:dark_edition}Brillante{}",
-                    "{C:inactive}(Sauf Blue Yourself){}"
+                    "{C:inactive}(Sauf Plaisir Solitaire){}"
                 },
             },
             j_neat_dayman = {
