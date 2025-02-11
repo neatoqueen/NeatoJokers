@@ -22,7 +22,7 @@ return {
                 },
             },
             j_neat_blueyourself = {
-                name = "Oh... La belle bleue",
+                name = "Plaisir Solitaire",
                 text = {
                     "Déclenche à nouveau les {C:attention}Jokers{} et les {C:attention}cartes{}",
                     "avec une édition {C:dark_edition}Brillante{}",
@@ -30,7 +30,7 @@ return {
                 },
             },
             j_neat_dayman = {
-                name = "Dayman",
+                name = "l'Homme du Jour",
                 text = {
                     "Si la {C:attention}première main{} du round est",
                     "une {C:attention}Reine{} simple, détruit la et",
@@ -89,7 +89,7 @@ return {
                 }
             },
             j_neat_nightman = {
-                name = "Nightman",
+                name = "l'Homme de la Nuit",
                 text = {
                     "Quand une {C:attention}main{} est jouée,",
                     "{C:attention}détruit{} une carte marquante aléatoire",
