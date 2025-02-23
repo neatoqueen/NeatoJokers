@@ -25,7 +25,7 @@ return {
                 text = {
                     "重复触发带有{C:dark_edition}闪箔{}",
                     "版本的{C:attention}小丑牌{}和{C:attention}记分牌{}",
-                    "{C:inactive}(不包括蓝自己){}"
+                    "{C:inactive}(不包括#1#){}"
                 },
             },
             j_neat_dayman = {

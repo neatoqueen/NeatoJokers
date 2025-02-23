@@ -25,7 +25,7 @@ return {
                 text = {
                     "Reative {C:attention}Curingas{} e {C:attention}cartas{}",
                     "{C:dark_edition}Laminados{}",
-                    "{C:inactive}(Com exceção de Azule-se){}"
+                    "{C:inactive}(Com exceção de #1#){}"
                 },
             },
             j_neat_dayman = {

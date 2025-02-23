@@ -24,7 +24,7 @@ return {
                 text = {
                     "Retriggers {C:attention}Jokers{} and {C:attention}cards{}",
                     "with the {C:dark_edition}Foil{} edition",
-                    "{C:inactive}(Excluding Blue Yourself){}"
+                    "{C:inactive}(Excluding #1#){}"
                 },
             },
             j_neat_dayman = {

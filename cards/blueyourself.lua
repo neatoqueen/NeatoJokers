@@ -6,6 +6,7 @@ SMODS.Joker {
             -- prevent foil tooltip from showing up twice
             info_queue[#info_queue+1] = G.P_CENTERS.e_foil
         end
+        return { vars = { localize{type = "name_text", set = "Joker", key = self.key} } }
     end,
     in_pool = function(self, args)
         return any_foils()
