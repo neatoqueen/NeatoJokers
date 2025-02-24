@@ -1,3 +1,4 @@
+--#region common functions
 function is_hand_given_suits(context, suit1, suit2)
     for i = 1, #context.scoring_hand do
         if context.scoring_hand[i].ability.name ~= 'Wild Card'
@@ -55,9 +56,15 @@ function any_foils()
     return false
 end
 
+G.FUNCS.go_to_neato_twitch = function(e)
+    love.system.openURL("https://twitch.tv/neato")
+end
+--#endregion
+
+
+--#region SMODS relevant functions (UI, config, etc)
 -- description tab loc vars in mods menu
 SMODS.current_mod.description_loc_vars = function()
-    -- shadow is still awaiting PR as of 2025/02/02, see https://github.com/Steamodded/smods/pull/433
     return { background_colour = G.C.CLEAR, text_colour = G.C.WHITE, scale = 1.2, shadow = true }
 end
 
@@ -72,11 +79,10 @@ SMODS.current_mod.custom_ui = function(nodes)
         twitch_link_table.config.tooltip = {text = {localize('b_open_link')}}
     end
 end
+--#endregion
 
-G.FUNCS.go_to_neato_twitch = function(e)
-    love.system.openURL("https://twitch.tv/neato")
-end
 
+--#region hooks
 local old_loc_colour = loc_colour
 function loc_colour(_c, _default)
     -- hook for custom colours
@@ -97,3 +103,4 @@ function Card:get_chip_mult()
     local mult = old_Card_get_chip_mult(self)
     return mult + (self.ability.perma_mult or 0)
 end
+--#endregion
