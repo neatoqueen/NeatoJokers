@@ -162,6 +162,17 @@ return {
             k_dog = "Woof!",
             k_gasp = "Gasp!",
             k_dozens = "There are dozens of us! Dozens!",
+
+            neato_music_options = {
+                "Always enabled",
+                "While owned",
+                "Shortly on bought",
+                "Disabled",
+            },
+            neato_music_description = {
+                "When to play Hatsune Joku music",
+                "(by Pichu-P)"
+            },
         }
     }
 }

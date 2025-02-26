@@ -79,6 +79,38 @@ SMODS.current_mod.custom_ui = function(nodes)
         twitch_link_table.config.tooltip = {text = {localize('b_open_link')}}
     end
 end
+
+G.FUNCS.neato_cycle_options = function(args)
+    -- G.FUNCS.cycle_update from Galdur
+    args = args or {}
+    if args.cycle_config and args.cycle_config.ref_table and args.cycle_config.ref_value then
+        args.cycle_config.ref_table[args.cycle_config.ref_value] = args.to_key
+    end
+end
+
+NeatoJokers = SMODS.current_mod
+SMODS.current_mod.config_tab = function()
+    return {
+        n=G.UIT.ROOT, config = {align = "cl", minh = G.ROOM.T.h*0.25, padding = 0.0, r = 0.1, colour = G.C.GREY}, nodes = {
+            {
+                n = G.UIT.C, config = { align = "cm", minw = G.ROOM.T.w*0.25, padding = 0.05 }, nodes = {
+                    create_option_cycle{
+                        label = localize('b_music'),
+                        w = 4.5,
+                        info = localize("neato_music_description"),
+                        options = localize("neato_music_options"),
+                        current_option = NeatoJokers.config.hatsune_musicu,
+                        colour = NeatoJokers.badge_colour,
+                        text_scale = 0.5,  -- default is 0.5
+                        ref_table = NeatoJokers.config,
+                        ref_value = "hatsune_musicu",
+                        opt_callback = 'neato_cycle_options',
+                    }
+                }
+            },
+        }
+    }
+end
 --#endregion
 
 

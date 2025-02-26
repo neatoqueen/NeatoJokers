@@ -163,6 +163,17 @@ return {
             k_dog = "Au-Au!",
             k_gasp = "'Suspiro!'",
             k_dozens = "Somos dúzias! Dúzias!",
+
+            neato_music_options = {
+                "Sempre",
+                "Se possuído",
+                "Logo após a compra",
+                "Nunca",
+            },
+            neato_music_description = {
+                "Quando tocar a música de Hatsune Joku",
+                "(por Pichu-P)"
+            },
         }
     }
 }

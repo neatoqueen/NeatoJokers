@@ -1,4 +1,4 @@
--- translation by Brookling
+-- translation by Brookling and others
 return {
     descriptions = {
         Joker = {
@@ -166,6 +166,17 @@ return {
             k_dog = "汪！",
             k_gasp = "哎呦！",
             k_dozens = "咱们人多势众！老多人了！",
+
+            neato_music_options = {
+                "始终启用",
+                "拥有时",
+                "购买后短暂播放",
+                "禁用",
+            },
+            neato_music_description = {
+                "何时播放小丑初音背景音乐",
+                "(由 Pichu-P 创作)"
+            },
         }
     }
 }
