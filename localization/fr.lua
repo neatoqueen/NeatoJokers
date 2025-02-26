@@ -169,7 +169,7 @@ return {
 
             neato_music_options = {
                 "Toujours actif",
-                "Tant que possédé",
+                "Lorsque possédé",
                 "Juste après achat",
                 "Désactivé",
             },
