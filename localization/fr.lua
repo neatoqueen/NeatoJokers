@@ -166,6 +166,17 @@ return {
             k_dog = "Woof!",
             k_gasp = "Uh!",
             k_dozens = "Nous sommes des dizaines! Des dizaines!",
+
+            neato_music_options = {
+                "Toujours actif",
+                "Tant que possédé",
+                "Juste après achat",
+                "Désactivé",
+            },
+            neato_music_description = {
+                "Quand jouer la musique Hatsune Joku",
+                "(par Pichu-P)"
+            },
         }
     }
 }
