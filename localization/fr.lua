@@ -1,5 +1,4 @@
---[[Translation made by ToufouMaster]]
-
+-- translation by ToufouMaster, SDM_0
 return {
     descriptions = {
         Joker = {
