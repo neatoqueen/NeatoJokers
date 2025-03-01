@@ -3,11 +3,9 @@ A **vanilla-like joker expansion mod** with references <br>to my favorite *youtu
 ### Bugs? Feedback?<br> Report here: [Google Form](https://forms.gle/Riyai7krZrmHRfsJ8)
 
 # Installation
-Requires `steamodded-1.0.0~ALPHA-1324a` or newer - [link](https://github.com/Steamodded/smods/wiki).
+Requires `steamodded-1.0.0~ALPHA-1428c` or newer - [link](https://github.com/Steamodded/smods/wiki).
 
 Get the latest stable version of NeatoJokers from the [Releases](https://github.com/neatoqueen/NeatoJokers/releases/latest), then download and extract the zip.
-
-If you get a "Failed to detect NeatoJokers lovely patches" error, make sure your folders aren't nested (a `neato-jokers-mod` folder inside a `neato-jokers-mod` folder).
 
 # About Me
 ![AneatoHiBWNEW2](https://github.com/user-attachments/assets/5f1b6ded-700a-432e-b323-a8b4f6ded044) I'm Neato! I'm a pixel artist and part-time streamer.
@@ -72,6 +70,14 @@ You can also find more of my joker art in these other vanilla-like mods
 ## PROGRAMMERS
 ![HorseNice-export](https://github.com/user-attachments/assets/4cedfbcf-3c7f-4ca8-b773-0cb194583fe4) Larswijn <br>
 ![alexMine-export](https://github.com/user-attachments/assets/c2eca34a-8161-461a-ab0e-a64afa56d728) Lia_Fr0st
+
+## MUSIC
+🎵 <a href="https://www.youtube.com/watch?v=VddKpgteL2U">Hatsune Joku music</a> by Pichu-P
+
+## LOCALIZATION
+🇫🇷 French by ToufouMaster and SDM_0 <br>
+🇧🇷 Portuguese by SarcasticPotato and PinkMaggit <br>
+🇨🇳 Chinese by Brookling, Dimserene, and others <br>
 
 ## RECOMMENDED MODS
 - [Card Sleeves by Larswijn](https://github.com/larswijn/CardSleeves) *New tech*
