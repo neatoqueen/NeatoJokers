@@ -11,7 +11,7 @@
 	"badge_text_colour": "FFFFFF",
 	"version": "1.0.3",
 	"dependencies": [
-		"Steamodded (>=1.0.0~ALPHA-1324a)"
+		"Steamodded (>=1.0.0~ALPHA-1428c)"
 	],
     "conflicts": [
         "Talisman (<<2.1.0~dev)"

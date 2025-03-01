@@ -1,4 +1,4 @@
--- translation by Brookling and others
+-- translation by Brookling, Dimserene, and others
 return {
     descriptions = {
         Joker = {
@@ -152,7 +152,7 @@ return {
         Other = {
             card_extra_mult = {
                 text = {
-                    "{C:mult}+#1#{}额外倍率",
+                    "{C:mult}#1#{}额外倍率",
                 },
             },
         },

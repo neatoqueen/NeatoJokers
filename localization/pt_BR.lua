@@ -149,7 +149,7 @@ return {
         Other = {
             card_extra_mult = {
                 text = {
-                    "{C:mult}+#1#{} multi extra",
+                    "{C:mult}#1#{} multi extra",
                 },
             },
         },
