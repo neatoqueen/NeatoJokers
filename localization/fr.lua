@@ -32,7 +32,7 @@ return {
                 name = "l'Homme du Jour",
                 text = {
                     "Si la {C:attention}première main{} du round est",
-                    "une {C:attention}Reine{} simple, détruit la et",
+                    "une {C:attention}Dame{} simple, détruit la et",
                     "gagne {X:mult,C:white}X#1#{} au Multi",
                     "{C:inactive}(Actuellement : Multi. {X:mult,C:white}X#2#{}{C:inactive}){}",
                 },
