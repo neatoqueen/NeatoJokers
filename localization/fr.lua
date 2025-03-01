@@ -1,17 +1,17 @@
--- translation by ToufouMaster, SDM_0
+-- translation by ToufouMaster, SDM_0, and #Guigui
 return {
     descriptions = {
         Joker = {
             j_neat_australianshepherd = {
-                name = "Berger Australien",
+                name = "Berger australien",
                 text = {
-                    "Créer une carte {C:planet}Planète{} aléatoire",
+                    "Crée une carte {C:planet}Planète{} aléatoire",
                     "quand la {C:attention}Blinde{} est sélectionnée.",
                     "{C:inactive}(Selon la place disponible){}"
                 },
             },
             j_neat_bananastand = {
-                name = "Le Stand de Banane",
+                name = "Le stand de banane",
                 text = {
                     "{C:green}#1# chance(s) sur #2#{} pour que",
                     "les {C:attention}mains{} jouées donnent {C:money}$#4#{},",
@@ -21,7 +21,7 @@ return {
                 },
             },
             j_neat_blueyourself = {
-                name = "Plaisir Solitaire",
+                name = "Plaisir solitaire",
                 text = {
                     "Déclenche à nouveau les {C:attention}Jokers{} et les {C:attention}cartes{}",
                     "avec une édition {C:dark_edition}Brillante{}",
@@ -29,7 +29,7 @@ return {
                 },
             },
             j_neat_dayman = {
-                name = "l'Homme du Jour",
+                name = "l'Homme du jour",
                 text = {
                     "Si la {C:attention}première main{} du round est",
                     "une {C:attention}Dame{} simple, détruit la et",
@@ -38,7 +38,7 @@ return {
                 },
             },
             j_neat_dogsplayingbalatro = {
-                name = "Chiens Jouant à Balatro",
+                name = "Chiens jouant à Balatro",
                 text = {
                     "{C:green}#1# chance(s) sur #2#{} de piocher",
                     "une carte {C:spectral}Spectrale{} aléatoire quand",
@@ -47,7 +47,7 @@ return {
                 },
             },
             j_neat_frostedprimerib = {
-                name = 'Côte de Bœuf Givrée',
+                name = 'Côte de bœuf givrée',
                 text = {
                     "Pour les {C:attention}#3#{} prochaines mains",
                     "Chaque {C:attention}cartes{} jouées gagne",
@@ -63,7 +63,7 @@ return {
                 },
             },
             j_neat_icecreamsandwich = {
-                name = "Sandwich à la Crême Glacée",
+                name = "Sandwich à la crême glacée",
                 text = {
                     "Multi. {X:mult,C:white} X#1# {}",
                     "retire {X:mult,C:white} X#2# {} au Multi.",
@@ -79,7 +79,7 @@ return {
                 },
             },
             j_neat_lockin = {
-                name = "Joker Verrouillé", --[[Couldn't find the reference i know it's about a streamer]]
+                name = "Joker verrouillé", --[[Couldn't find the reference i know it's about a streamer]]
                 text = {
                     "Ce Joker gagne {C:mult}+#1#{} au Multi.",
                     "quand la {C:attention}Blinde{} est sélectionnée,",
@@ -88,7 +88,7 @@ return {
                 }
             },
             j_neat_nightman = {
-                name = "l'Homme de la Nuit",
+                name = "l'Homme de la nuit",
                 text = {
                     "Quand une {C:attention}main{} est jouée,",
                     "{C:attention}détruit{} une carte marquante aléatoire",
@@ -97,7 +97,7 @@ return {
                 },
             },
             j_neat_sparecutoffs = {
-                name = "Petit Jean",
+                name = "Petit jean",
                 text = {
                     "Ce Joker octroie {C:chips}+#1#{} Jetons",
                     "si la main jouée contient",
@@ -106,7 +106,7 @@ return {
                 },
             },
             j_neat_tabbycat = {
-                name = "Chat Tigré",
+                name = "Chat tigré",
                 text = {
                     "Ce Jokers octroie {C:mult}+#1#{} au Multi.",
                     "à chaque {C:attention}#2#{} {C:inactive}[#3#]{} défaussé",
@@ -114,14 +114,14 @@ return {
                 },
             },
             j_neat_unpaidintern = {
-                name = "Interne Malpayé",
+                name = "Stagiaire Malpayé",
                 text = {
                     "Chaque {C:attention}9{} ou {C:attention}5 joué octroie",
                     "{C:chips}+#1#{} Jetons lorsqu'elle marque des points",
                 },
             },
             j_neat_wildcardcharlie = {
-                name = "Charlie aux Cartes Sauvages",
+                name = "Charlie aux cartes sauvages",
                 text = {
                     "Chaque {C:attention}Carte Sauvage{} octroie {X:mult,C:white}X#1#{} au Multi.",
                     "lorsqu'elle marque des points ou qu'elle est en main."
@@ -143,7 +143,7 @@ return {
                     " ",
                     " ",
                     "Programmation et implémentation par {C:neat_lars}Larswijn{} et {C:neat_lia}Lia{}.",
-                    "Les abilitées ont été concu par nous 3 avec l'aide de notre communautée",
+                    "Les capacités ont été conçues par nous 3 avec l'aide de notre communautée",
                     "sur les réseaux sociaux.",
                 }
             }
