@@ -10,19 +10,19 @@ Get the latest stable version of NeatoJokers from the [Releases](https://github.
 # About Me
 ![AneatoHiBWNEW2](https://github.com/user-attachments/assets/5f1b6ded-700a-432e-b323-a8b4f6ded044) I'm Neato! I'm a pixel artist and part-time streamer.
 
-I drew all the jokers for this mod over the course of of a year. You may have seen them on my [twitter](https://x.com/NEAT0QUEEN), [reddit](https://www.reddit.com/user/neatoqueen/submitted/) or [bluesky](https://bsky.app/profile/neato.live). <br> 
+I drew all the jokers for this mod over the course of of a year. You may have seen them on my [twitter](https://x.com/NEAT0QUEEN), [reddit](https://www.reddit.com/user/neatoqueen/submitted/) or [bluesky](https://bsky.app/profile/neato.live). <br>
 I plan to keep making more jokers and adding them in batches of 15!
 
 
 My pixel art is featured in Balatro! You can find me in the credits of the game. <br>
-I am responsible for the **Slay the Spire**, **Binding of Isaac** and **Shovel Knight** friends of Jimbo collabs 
+I am responsible for the **Slay the Spire**, **Binding of Isaac** and **Shovel Knight** friends of Jimbo collabs
 
-<details> 
+<details>
 <summary> Click to check out my Friends of Jimbo! </summary>
 <img src="https://github.com/user-attachments/assets/f6044581-e256-400b-adbc-b60586119820" alt="Neato FoJs">
 </details>
 
-Follow me on [twitch](https://www.twitch.tv/neato)! 
+Follow me on [twitch](https://www.twitch.tv/neato)!
 *I stream my pixel art process, Balatro, Rocket League and other roguelikes a couple times a week.*
 
 You can also find more of my joker art in these other vanilla-like mods
@@ -32,7 +32,7 @@ You can also find more of my joker art in these other vanilla-like mods
 ## ADDITIONS ![neatoPoker2-export](https://github.com/user-attachments/assets/52341aeb-17cc-405a-ad6b-a756c2ebeec8)
 
 
-<details> 
+<details>
 <summary> Creator Jokers </summary>
 - Frosted Prime Rib <a href="https://www.youtube.com/channel/UCnrdFUk_XfPJooztStcHG4g">Frost Prime</a><br>
 - Lock In Joker <a href="https://www.youtube.com/NorthernLion">Northernlion</a><br>
@@ -45,7 +45,7 @@ You can also find more of my joker art in these other vanilla-like mods
 - Blue Myself <br>
 - Banana Stand <br>
 - Ice Cream Sandwich <br>
-- Spare Cutoffs 
+- Spare Cutoffs
 </details>
 
 <details>
@@ -75,7 +75,7 @@ You can also find more of my joker art in these other vanilla-like mods
 🎵 <a href="https://www.youtube.com/watch?v=VddKpgteL2U">Hatsune Joku music</a> by Pichu-P
 
 ## LOCALIZATION
-🇫🇷 French by ToufouMaster and SDM_0 <br>
+🇫🇷 French by ToufouMaster, SDM_0 and #Guigui <br>
 🇧🇷 Portuguese by SarcasticPotato and PinkMaggit <br>
 🇨🇳 Chinese by Brookling, Dimserene, and others <br>
 
