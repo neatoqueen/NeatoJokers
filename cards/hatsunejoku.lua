@@ -1,4 +1,4 @@
-local music_countdown = G.TIMERS.REAL
+local music_countdown = G.TIMERS.UPTIME  -- use UPTIME instead of REAL since REAL can get reset (e.g. run restart)
 
 local hatsunejoku_music = SMODS.Sound{
     key = "hatsunejoku_music",
@@ -11,7 +11,7 @@ local hatsunejoku_music = SMODS.Sound{
         elseif NeatoJokers.config.hatsune_musicu == 2 and #SMODS.find_card("j_neat_hatsunejoku") > 0 then
             -- enabled while Hatsune Joku is present
             return 100
-        elseif NeatoJokers.config.hatsune_musicu == 3 and music_countdown > G.TIMERS.REAL then
+        elseif NeatoJokers.config.hatsune_musicu == 3 and music_countdown > G.TIMERS.UPTIME then
             -- temporarily enabled when Hatsune Joku is obtained
             return 100
         else
@@ -24,7 +24,7 @@ SMODS.Joker {
     key = "hatsunejoku",
     config = { extra = { repetitions = 2 } },
     unlocked = true,
-    discovered = true, 
+    discovered = true,
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
@@ -34,12 +34,12 @@ SMODS.Joker {
     cost = 5,
     add_to_deck = function(self, card, from_debuff)
         if not from_debuff then
-            music_countdown = G.TIMERS.REAL + 5.5  -- play song for next 5.5 seconds
+            music_countdown = G.TIMERS.UPTIME + 5.5  -- play song for next 5.5 seconds
             local juice_while = function()
                 -- only juice if music is temporary and music is enabled
                 return NeatoJokers.config.hatsune_musicu == 3 and
                 G.SETTINGS.SOUND.volume > 0 and G.SETTINGS.SOUND.music_volume > 0 and
-                music_countdown > G.TIMERS.REAL
+                music_countdown > G.TIMERS.UPTIME
             end
             if juice_while() then
                 juice_card_until(card, juice_while)
