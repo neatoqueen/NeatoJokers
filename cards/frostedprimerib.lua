@@ -9,6 +9,7 @@ SMODS.Joker {
     blueprint_compat = true,
     eternal_compat = false,
     perishable_compat = true,
+    pools = { Food = true },
     rarity = 2,
     atlas = "NeatoJokers",
     pos = { x = 7, y = 0 }, 
