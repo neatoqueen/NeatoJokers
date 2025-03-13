@@ -48,7 +48,7 @@ SMODS.Joker {
                         return true
                     end
                 })
-                if G.GAME.dollars > 0 then
+                if to_big(G.GAME.dollars) > to_big(0) then  -- use `to_big` for Talisman compat
                     ease_dollars(-G.GAME.dollars, true)  -- if not instant=true multiple extinct copies will put you in debt due to race condition
                 end
                 return {
