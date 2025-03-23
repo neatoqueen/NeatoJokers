@@ -132,11 +132,4 @@ function loc_colour(_c, _default)
 
     return old_loc_colour(_c, _default)
 end
-
-local old_Card_get_chip_mult = Card.get_chip_mult
-function Card:get_chip_mult()
-    -- hook seems best for mod compat?
-    local mult = old_Card_get_chip_mult(self)
-    return mult + (self.ability.perma_mult or 0)
-end
 --#endregion
