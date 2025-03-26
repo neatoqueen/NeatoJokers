@@ -1,4 +1,4 @@
-SMODS.Joker { 
+SMODS.Joker {
     key = "dayman",
     config = { extra = { x_mult = 1, scaling = 0.5 } },
     loc_vars = function(self, info_queue, card)
@@ -29,6 +29,7 @@ SMODS.Joker {
                     message = localize('k_upgrade_ex'),
                     colour = G.C.MULT,
                     juice_card = card,
+                    remove = true
                 }
             end
         end
