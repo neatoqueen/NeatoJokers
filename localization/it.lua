@@ -1,3 +1,4 @@
+-- translation by TheSnazfrin and ieatmilk
 return {
     descriptions = {
         Joker = {
