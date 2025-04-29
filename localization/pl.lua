@@ -2,7 +2,7 @@ return {
     descriptions = {
         Joker = {
             j_neat_australianshepherd = {
-                name = "Australian Shepherd",
+                name = "Owczarek australijski",
                 text = {
                     "Tworzy losową kartę {C:planet}Planety{}",
                     "gdy {C:attention}Przeszkadzajka{} jest wybrana",
@@ -10,7 +10,7 @@ return {
                 },
             },
             j_neat_bananastand = {
-                name = "The Banana Stand",
+                name = "Stoisko z bananami",
                 text = {
                     "{C:green}#1# na #2#{} szans, że zagrana",
                     "{C:attention}ręka{} zdobędzie {C:money}$#4#{},",
@@ -37,7 +37,7 @@ return {
                 },
             },
             j_neat_dogsplayingbalatro = {
-                name = "Dogs Playing Balatro",
+                name = "Psy grające w Balatro",
                 text = {
                     "{C:green}#1# na #2#{} szans na stworzenie",
                     "losowej karty {C:spectral}Ducha{}",
@@ -46,7 +46,7 @@ return {
                 },
             },
             j_neat_frostedprimerib = {
-                name = 'Frosted Prime Rib',
+                name = 'Mrożony antrykot',
                 text = {
                     "Przez następne {C:attention}#3#{} ręce",
                     "Kaźda zagrana {C:attention}karta{} na stałe zdobywa",
@@ -62,7 +62,7 @@ return {
                 },
             },
             j_neat_icecreamsandwich = {
-                name = "Ice Cream Sandwich",
+                name = "Lodowa kanapka",
                 text = {
                     "{X:mult,C:white} X#1# {} do mnoż.",
                     "traci {X:mult,C:white} X#2# {} mnoż. za",
@@ -78,7 +78,7 @@ return {
                 },
             },
             j_neat_lockin = {
-                name = "Lock-In Joker",
+                name = "Joker-Bloker",
                 text = {
                     "Ten Joker zdobywa {C:mult}+#1#{} do mnoż.",
                     "gdy {C:attention}Przeszkadzajka{} jest wybrana,",
@@ -96,7 +96,7 @@ return {
                 },
             },
             j_neat_sparecutoffs = {
-                name = "Spare Cutoffs",
+                name = "Zapasowe szorty",
                 text = {
                     "Ten Joker zdobywa {C:chips}+#1#{} żet.",
                     "jeśli zagrana ręka zawiera",
@@ -105,7 +105,7 @@ return {
                 },
             },
             j_neat_tabbycat = {
-                name = "Tabby Cat",
+                name = "Kocur bury",
                 text = {
                     "Ten Joker zdobywa {C:mult}+#1#{} do mnoż.",
                     "za każde {C:attention}#2#{} {C:inactive}[#3#]{}",
@@ -114,7 +114,7 @@ return {
                 },
             },
             j_neat_unpaidintern = {
-                name = "Unpaid Intern",
+                name = "Nieopłacany stażysta",
                 text = {
                     "Każda {C:attention}9{} i {C:attention}5",
                     "zdobywa {C:chips}+#1#{} żet.",
