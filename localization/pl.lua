@@ -134,7 +134,7 @@ return {
                 name = "Neato Jokers",
                 text = {
                     "Dodaje {C:red}15{} tematycznych Jokerów, grafika autorstwa {C:attention}Neato{}!",
-                    "Obserwuj na {C:purple}twitch.tv/neato{}, aby wesprzeć!",  -- "twitch.tv/neato" zostaje zamienione w klikalny link
+                    "Obserwuj na {C:purple}twitch.tv/neato{}, aby wesprzeć!",
                     " ",
                     " ",
                     "{C:attention}Wyróżnione motywy:{}",
