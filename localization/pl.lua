@@ -12,7 +12,7 @@ return {
             j_neat_bananastand = {
                 name = "The Banana Stand",
                 text = {
-                    "{C:green}#1# na #2#{} szanse, że zagrana",
+                    "{C:green}#1# na #2#{} szans, że zagrana",
                     "{C:attention}ręka{} zdobędzie {C:money}$#4#{},",
                     "{C:green}#1# na #3#{} szans, że ta karta",
                     "zostanie {C:red}zniszczona{} na końcu rundy",
@@ -50,7 +50,7 @@ return {
                 text = {
                     "Przez następne {C:attention}#3#{} ręce",
                     "Kaźda zagrana {C:attention}karta{} na stałe zdobywa",
-                    "{C:chips}+#1#{} żetonów oraz {C:mult}+#2#{} mnoż gdy",
+                    "{C:chips}+#1#{} żet. oraz {C:mult}+#2#{} do mnoż. gdy",
                     "zdobywa punkty"
                 },
             },
@@ -73,7 +73,7 @@ return {
                 name = "JokerZD",
                 text = {
                     "Ten Joker zdobywa {X:mult,C:white}X#1#{} do mnoż. za",
-                    "za każdego unikalnego{C:attention}zakupionego{} Jokera",
+                    "za każdego unikalnego {C:attention}zakupionego{} Jokera",
                     "{C:inactive}(obecnie: {X:mult,C:white}X#2#{} {C:inactive}do mnoż.)"
                 },
             },
@@ -98,10 +98,10 @@ return {
             j_neat_sparecutoffs = {
                 name = "Spare Cutoffs",
                 text = {
-                    "Ten Joker zdobywa {C:chips}+#1#{} żetonów",
+                    "Ten Joker zdobywa {C:chips}+#1#{} żet.",
                     "jeśli zagrana ręka zawiera",
                     "{C:attention}#2#",
-                    "{C:inactive}(obecnie {C:chips}+#3#{C:inactive} do żetonów)"
+                    "{C:inactive}(obecnie {C:chips}+#3#{C:inactive} do żet.)"
                 },
             },
             j_neat_tabbycat = {
@@ -117,7 +117,7 @@ return {
                 name = "Unpaid Intern",
                 text = {
                     "Każda {C:attention}9{} i {C:attention}5",
-                    "zdobywa {C:chips}+#1#{} żetonów",
+                    "zdobywa {C:chips}+#1#{} żet.",
                     "gdy zdobywa punkty"
                 },
             },
