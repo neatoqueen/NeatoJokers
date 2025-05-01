@@ -79,6 +79,7 @@ You can also find more of my joker art in these other vanilla-like mods
 🇧🇷 Portuguese by SarcasticPotato and PinkMaggit <br>
 🇨🇳 Chinese by Brookling, Dimserene, and others <br>
 🇮🇹 Italian by TheSnazfrin and ieatmilk <br>
+🇵🇱 Polish by Grzebla <br>
 
 
 ## RECOMMENDED MODS
