@@ -1,3 +1,4 @@
+-- translation by gzrebla
 return {
     descriptions = {
         Joker = {
