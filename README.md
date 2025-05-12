@@ -80,7 +80,7 @@ You can also find more of my joker art in these other vanilla-like mods
 🇨🇳 Chinese by Brookling, Dimserene, and others <br>
 🇮🇹 Italian by TheSnazfrin and ieatmilk <br>
 🇵🇱 Polish by Grzebla <br>
-
+🇲🇽 Spanish (Mexico) by Franderman123 and ElTioRata <br>
 
 ## RECOMMENDED MODS
 - [Card Sleeves by Larswijn](https://github.com/larswijn/CardSleeves) *New tech*
