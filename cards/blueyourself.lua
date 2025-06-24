@@ -21,8 +21,8 @@ SMODS.Joker {
     pos = { x = 0, y = 0 },
     cost = 8,
     calculate = function(self, card, context)
-        if context.retrigger_joker_check and
-                context.other_card.config.center.key ~= self.key and  -- don't retrigger other blueyourself jokers
+        if context.retrigger_joker_check and context.other_card and
+                context.other_card.config and context.other_card.config.center.key ~= self.key and  -- don't retrigger other blueyourself jokers
                 context.other_card.edition and context.other_card.edition.key == "e_foil" then
             -- joker card retriggers using .retrigger_joker_check
             if context.other_ret and context.other_ret.jokers and context.other_ret.jokers.was_blueprinted then
@@ -35,7 +35,7 @@ SMODS.Joker {
                     was_blueprinted = context.blueprint,
                 }
             end
-        elseif context.repetition and not context.repetition_only and 
+        elseif context.repetition and not context.repetition_only and
                 context.other_card and context.other_card.edition and context.other_card.edition.key == "e_foil" then
             -- playing card retriggers using .repetition
             return {
