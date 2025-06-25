@@ -14,8 +14,8 @@ return {
                 name = "O Estande da Banana",
                 text = {
                     "Chance de {C:green}#1# em #2#{} de que a",
-                    "{C:attention}mão{} jogada dê {C:money}$#4#{},",
-                    "Chance de {C:green}#1# em #3#{} desta carta",
+                    "{C:attention}mão{} jogada dê {C:money}$#5#{},",
+                    "Chance de {C:green}#3# em #4#{} desta carta",
                     "ser {C:red}destruída{} no fim da rodada",
                     "{C:inactive}Perca TODO o dinheiro se destruída{}"
                 },

@@ -11,24 +11,27 @@ SMODS.Joker {
     pos = { x = 3, y = 0 },
     cost = 6,
     loc_vars = function(self, info_queue, card)
+        local base_chance, earn_chance = neato_get_random(card, 1, card.ability.extra.earn_chance)
+        local base_chance2, destroy_chance = neato_get_random(card, 1, card.ability.extra.destroy_chance)
         return {
             vars = {
-                G.GAME and G.GAME.probabilities.normal or 1,
-                card.ability.extra.earn_chance,
-                card.ability.extra.destroy_chance,
+                base_chance,
+                earn_chance,
+                base_chance2,
+                destroy_chance,
                 card.ability.extra.earn_amt
             }
         }
     end,
     calculate = function(self, card, context)
         if context.before then
-            if pseudorandom('stand') < G.GAME.probabilities.normal/card.ability.extra.earn_chance then
+            if neato_roll_random(card, 'stand', 1, card.ability.extra.earn_chance) then
                 return {
                     dollars = card.ability.extra.earn_amt
                 }
             end
         elseif context.end_of_round and not context.repetition and not context.game_over and not context.blueprint and not context.individual then
-            if pseudorandom('stand') < G.GAME.probabilities.normal/card.ability.extra.destroy_chance then
+            if neato_roll_random(card, 'stand', 1, card.ability.extra.destroy_chance) then
                 G.E_MANAGER:add_event(Event{
                     -- mostly a copy-paste from gros michel
                     func = function()

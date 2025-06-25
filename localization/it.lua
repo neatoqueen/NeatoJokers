@@ -14,8 +14,8 @@ return {
                 name = "Mercatino della banana",
                 text = {
                     "{C:green}#1# probabilità su #2#{} che giocare una",
-                    "{C:attention}mano{} dia {C:money}$#4#{},",
-                    "{C:green}#1# probabilità su #3#{} che questa carta",
+                    "{C:attention}mano{} dia {C:money}$#5#{},",
+                    "{C:green}#3# probabilità su #4#{} che questa carta",
                     "si {C:red}distrugga{} alla fine del round",
                     "{C:inactive}Se distrutta, perdi tutti i soldi che hai{}"
                 },

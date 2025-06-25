@@ -14,8 +14,8 @@ return {
                 name = "Puesto bananero",
                 text = {
                     "{C:green}#1# en #2#{} probabilidades de que la",
-                    "{C:attention}mano jugada{} otorgue {C:money}$#4#{},",
-                    "{C:green}#1# en #3#{} probabilidades de que la carta",
+                    "{C:attention}mano jugada{} otorgue {C:money}$#5#{},",
+                    "{C:green}#3# en #4#{} probabilidades de que la carta",
                     "se {C:red}destruya{} al final de la ronda",
                     "{C:inactive}Pierde TODO tu dinero si se destruye{}"
                 },

@@ -14,8 +14,8 @@ return {
                 name = "Stoisko z bananami",
                 text = {
                     "{C:green}#1# na #2#{} szans, że zagrana",
-                    "{C:attention}ręka{} zdobędzie {C:money}$#4#{},",
-                    "{C:green}#1# na #3#{} szans, że ta karta",
+                    "{C:attention}ręka{} zdobędzie {C:money}$#5#{},",
+                    "{C:green}#3# na #4#{} szans, że ta karta",
                     "zostanie {C:red}zniszczona{} na końcu rundy",
                     "{C:inactive}Tracisz WSZYSTKIE pieniądze jeśli zniszczona{}"
                 },

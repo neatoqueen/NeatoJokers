@@ -1,7 +1,7 @@
 SMODS.Joker {
     key = "dogsplayingbalatro",
     unlocked = true,
-    discovered = true, 
+    discovered = true,
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
@@ -11,11 +11,12 @@ SMODS.Joker {
     pos = { x = 5, y = 1 },
     cost = 6,
     loc_vars = function(self, info_queue, card)
-        return { vars = {''..(G.GAME and G.GAME.probabilities.normal or 1), card.ability.extra}}
+        local base_chance, payout_chance = neato_get_random(card, 1, card.ability.extra)
+        return { vars = {base_chance, payout_chance}}
     end,
     calculate = function(self, card, context)
         if context.using_consumeable and context.consumeable.ability.set == "Planet" and #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
-            if pseudorandom('dogs') < G.GAME.probabilities.normal/card.ability.extra then
+            if neato_roll_random(card, 'dogs', 1, card.ability.extra) then
                 G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
                 G.E_MANAGER:add_event(Event({
                     func = function()

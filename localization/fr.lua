@@ -14,8 +14,8 @@ return {
                 name = "Le stand de banane",
                 text = {
                     "{C:green}#1# chance(s) sur #2#{} pour que",
-                    "les {C:attention}mains{} jouées donnent {C:money}$#4#{},",
-                    "{C:green}#1# chance(s) sur #3#{} pour que ce joker",
+                    "les {C:attention}mains{} jouées donnent {C:money}$#5#{},",
+                    "{C:green}#3# chance(s) sur #4#{} pour que ce joker",
                     "soit {C:red}détruite{} à la fin de la manche",
                     "{C:inactive}Perdez TOUT votre argent si détruite{}"
                 },
