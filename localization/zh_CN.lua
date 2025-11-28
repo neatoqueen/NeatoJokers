@@ -21,10 +21,10 @@ return {
                 },
             },
             j_neat_blueyourself = {
-                name = "蓝自己",
+                name = "涂蓝自己",
                 text = {
-                    "重复触发带有{C:dark_edition}闪箔{}",
-                    "版本的{C:attention}小丑牌{}和{C:attention}记分牌{}",
+                    "重新触发带有{C:dark_edition}闪箔{}",
+                    "版本的{C:attention}小丑牌{}和{C:attention}游戏牌{}",
                     "{C:inactive}(不包括#1#){}"
                 },
             },
